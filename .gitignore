@@ -1,0 +1,14 @@
+# Herramientas locales del editor / asistente
+.claude/
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Archivos temporales de Office (mientras el .docx / .xlsx está abierto)
+~$*
+
+# Dependencias y registros
+node_modules/
+*.log
