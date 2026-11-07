@@ -22,4 +22,16 @@
   function professionalsOf(specialtyId) {
     return D.professionals.filter(function (p) { return p.specialtyId === specialtyId; });
   }
+
+  /* ---------- Inicio: accesos directos ---------- */
+  function specialtyShortcuts(mount) {
+    mount.innerHTML = D.specialties.map(function (s) {
+      return '<a class="card shortcut" href="especialidades.html#' + U.esc(s.id) + '">' +
+        '<span class="shortcut-icon">' + U.icon('tooth', 26) + '</span>' +
+        '<h3>' + U.esc(s.name) + '</h3>' +
+        '<p>' + U.esc(s.short) + '</p>' +
+        '<span class="shortcut-more">Ver detalle ' + U.icon('arrow', 16) + '</span>' +
+        '</a>';
+    }).join('');
+  }
 })();
