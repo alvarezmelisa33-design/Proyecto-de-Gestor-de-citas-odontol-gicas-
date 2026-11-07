@@ -157,4 +157,30 @@
     }
     $('cal-grid').innerHTML = html;
   }
+
+  function renderSlots() {
+    var box = $('slots');
+    if (!state.date) {
+      box.innerHTML = '<p class="slots-empty">Elige un día disponible en el calendario para ver los horarios.</p>';
+      return;
+    }
+    var slots = slotsFor(currentPro(), state.date);
+    var groups = [
+      { id: 'morning', label: 'Turno mañana', icon: 'clock' },
+      { id: 'afternoon', label: 'Turno tarde', icon: 'clock' }
+    ];
+    var html = '';
+    groups.forEach(function (g) {
+      var list = slots.filter(function (s) { return s.group === g.id; });
+      if (!list.length) { return; }
+      html += '<div class="slot-group-title">' + U.icon(g.icon, 16) + '<span>' + g.label + '</span></div>' +
+        '<div class="slots" role="group" aria-label="Horarios ' + g.label.toLowerCase() + '">' +
+        list.map(function (s) {
+          var sel = state.time === s.time;
+          return '<button type="button" class="slot' + (sel ? ' is-selected' : '') + '" data-time="' + s.time + '"' +
+            (s.free ? '' : ' disabled') + ' aria-pressed="' + (sel ? 'true' : 'false') + '">' + U.formatTime(s.time) + '</button>';
+        }).join('') + '</div>';
+    });
+    box.innerHTML = html;
+  }
 })();
