@@ -87,4 +87,8 @@
       return s;
     });
   }
+
+  function dayHasFree(pro, date) {
+    return slotsFor(pro, date).some(function (s) { return s.free; });
+  }
 })();
