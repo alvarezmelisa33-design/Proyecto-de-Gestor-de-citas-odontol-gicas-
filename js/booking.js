@@ -292,4 +292,74 @@
 
   function collapse(v) { return v.replace(/\s+/g, ' ').trim(); }
   function docRule() { return U.byId(D.documentTypes, $('doc-type').value) || D.documentTypes[0]; }
+
+  /* Cada campo: sanitize (limpia mientras se escribe) y validate (devuelve el mensaje de error o '') */
+  var FIELDS = {
+    docNumber: {
+      el: 'doc-number',
+      sanitize: function (v) {
+        var rule = docRule();
+        v = rule.id === 'PA' ? v.replace(/[^A-Za-z0-9]/g, '').toUpperCase() : v.replace(/\D/g, '');
+        return v.slice(0, rule.max);
+      },
+      validate: function (v) {
+        var rule = docRule();
+        if (!v) { return 'Ingresa tu número de documento.'; }
+        if (!rule.pattern.test(v)) { return rule.hint; }
+        if (v.length < rule.min || v.length > rule.max) {
+          return rule.min === rule.max
+            ? 'El documento debe tener ' + rule.min + ' caracteres.'
+            : 'El documento debe tener entre ' + rule.min + ' y ' + rule.max + ' caracteres (llevas ' + v.length + ').';
+        }
+        if (rule.id !== 'PA' && (/^0/.test(v) || /^(\d)\1+$/.test(v))) { return 'Revisa el número: no parece un documento válido.'; }
+        return '';
+      }
+    },
+    fullName: {
+      el: 'full-name',
+      sanitize: function (v) {
+        return v.replace(new RegExp('[^' + LETTERS + '\\s\'’-]', 'g'), '').replace(/^\s+/, '').replace(/\s{2,}/g, ' ').slice(0, 60);
+      },
+      validate: function (v) {
+        v = collapse(v);
+        if (!v) { return 'Ingresa tu nombre completo.'; }
+        var words = v.split(' ');
+        if (words.length < 2) { return 'Escribe al menos tu nombre y un apellido.'; }
+        if (!words.every(function (w) { return WORD_RE.test(w); })) { return 'Usa solo letras (se permite guion y apóstrofo).'; }
+        if (v.replace(/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/g, '').length < 5) { return 'El nombre es demasiado corto.'; }
+        return '';
+      }
+    },
+    phone: {
+      el: 'phone',
+      sanitize: function (v) {
+        var digits = v.replace(/\D/g, '');
+        if (digits.length > 10 && digits.indexOf('57') === 0) { digits = digits.slice(2); } /* admite +57 */
+        return digits.slice(0, 10);
+      },
+      validate: function (v) {
+        v = v.replace(/\s/g, ''); /* el campo se muestra formateado: 312 456 7890 */
+        if (!v) { return 'Ingresa tu número de celular.'; }
+        if (v.length !== 10) { return 'El celular debe tener 10 dígitos (llevas ' + v.length + ').'; }
+        if (v.charAt(0) !== '3') { return 'Los celulares en Colombia empiezan por 3.'; }
+        return '';
+      }
+    },
+    reason: {
+      el: 'reason',
+      sanitize: function (v) { return v.replace(/[\u0000-\u001F\u007F<>]/g, ' ').replace(/\s{2,}/g, ' ').replace(/^\s+/, '').slice(0, 250); },
+      validate: function (v) {
+        v = collapse(v);
+        if (!v) { return 'Cuéntanos brevemente el motivo de tu consulta.'; }
+        if (v.length < 10) { return 'Describe un poco más el motivo (mínimo 10 caracteres).'; }
+        if (!new RegExp('[' + LETTERS + ']{3,}').test(v)) { return 'Escribe el motivo con palabras.'; }
+        return '';
+      }
+    },
+    consent: {
+      el: 'consent',
+      sanitize: null,
+      validate: function () { return $('consent').checked ? '' : 'Debes aceptar el tratamiento de tus datos para continuar.'; }
+    }
+  };
 })();
