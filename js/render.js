@@ -233,4 +233,13 @@
       item('chat', 'WhatsApp', '<p><a href="' + U.esc(c.whatsappLink) + '" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></p>') +
       item('mail', 'Correo electrónico', '<p><a href="mailto:' + U.esc(c.email) + '">' + U.esc(c.email) + '</a></p>');
   }
+
+  var RENDERERS = {
+    'contact': contact,
+    'specialty-shortcuts': specialtyShortcuts,
+    'specialties': specialties,
+    'team': team,
+    'testimonials': testimonials,
+    'stories': stories
+  };
 })();
