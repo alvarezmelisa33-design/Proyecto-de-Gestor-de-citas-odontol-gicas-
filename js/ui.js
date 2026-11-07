@@ -94,4 +94,12 @@
       nodes[i].innerHTML = mediaHTML(nodes[i].getAttribute('data-media'), nodes[i].getAttribute('data-src') || '');
     }
   }
+
+  /* Elementos con data-icon="nombre" reciben su SVG (data-size opcional) */
+  function fillIcons() {
+    var nodes = document.querySelectorAll('[data-icon]');
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].innerHTML = icon(nodes[i].getAttribute('data-icon'), Number(nodes[i].getAttribute('data-size')) || 20);
+    }
+  }
 })();
