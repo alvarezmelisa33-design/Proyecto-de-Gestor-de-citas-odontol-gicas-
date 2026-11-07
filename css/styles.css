@@ -222,3 +222,12 @@ a { color: var(--lilac-dark); }
 .pro-avail p { display: flex; gap: 8px; align-items: center; margin: 0; font-weight: 600; font-size: 0.85rem; line-height: 1.4; white-space: nowrap; }
 .pro-avail .icon { color: var(--lilac-dark); }
 .pro-card .btn { align-self: stretch; }
+
+/* Testimonios */
+.quote { gap: 10px; }
+.quote blockquote { margin: 0; font-size: 1rem; }
+.stars { display: flex; gap: 2px; color: var(--lilac); }
+.stars svg { fill: currentColor; }
+.stars .off { color: #CBD5E0; }
+.quote-meta { margin-top: auto; font-size: 0.9rem; color: var(--gray-text); }
+.quote-meta strong { color: var(--navy); display: block; }
