@@ -230,6 +230,26 @@
                   <span class="msg"></span>
                 </p>
               </div>
+              <div class="field">
+                <label for="reason">
+                  <span>Motivo de consulta</span>
+                  <span class="field-hint">Cuéntanos qué necesitas</span>
+                </label>
+                <p class="quick-label">Sugerencias rápidas:</p>
+                <div class="chips" id="reason-chips">
+                  <button type="button" class="chip" data-reason="Valoración y tratamiento de ortodoncia">Ortodoncia</button>
+                  <button type="button" class="chip" data-reason="Rehabilitación oral y prótesis dental">Rehabilitación</button>
+                  <button type="button" class="chip" data-reason="Atención y cuidado odontopediátrico">Odontopediatría</button>
+                  <button type="button" class="chip" data-reason="Blanqueamiento y estética dental">Estética</button>
+                  <button type="button" class="chip" data-reason="Limpieza profunda y chequeo de rutina">Limpieza</button>
+                  <button type="button" class="chip" data-reason="Molestia, dolor o sensibilidad dental">Dolor o sensibilidad</button>
+                </div>
+                <textarea id="reason" class="textarea" rows="3" maxlength="250" placeholder="Describe el motivo de tu visita…" aria-describedby="err-reason" aria-invalid="false" required></textarea>
+                <p class="counter" id="reason-counter">0 / 250</p>
+                <p class="field-error" id="err-reason" role="alert">
+                  <span class="msg"></span>
+                </p>
+              </div>
             </form>
           </section>
         </div>
