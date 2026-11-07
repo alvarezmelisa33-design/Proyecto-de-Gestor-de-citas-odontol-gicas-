@@ -493,4 +493,37 @@
     renderCalendar();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  /* ======================================================================
+     Arranque: lee ?esp=... y ?prof=... de la URL (solo ids conocidos)
+     ====================================================================== */
+  function init() {
+    var params = new URLSearchParams(location.search);
+    var prof = U.byId(D.professionals, params.get('prof') || '');
+    var spec = U.byId(D.specialties, params.get('esp') || '');
+    if (prof) { spec = U.byId(D.specialties, prof.specialtyId); }
+    if (!spec) { spec = D.specialties[0]; }
+
+    state.specialtyId = spec.id;
+    state.proId = (prof && prof.specialtyId === spec.id) ? prof.id : professionalsOf(spec.id)[0].id;
+    state.view = firstAvailableView();
+
+    renderSpecialtySelect();
+    renderProfessionalSelect();
+    renderProMini();
+    renderCalendar();
+    renderSlots();
+    setFormLocked(true);
+    setStep(1);
+
+    $('doc-type').innerHTML = D.documentTypes.map(function (t) {
+      return '<option value="' + t.id + '">' + U.esc(t.label) + '</option>';
+    }).join('');
+
+    bindSchedule();
+    bindForm();
+    $('doc-type').dispatchEvent(new Event('change')); /* aplica largo máximo y ayuda del documento */
+    $('btn-print').addEventListener('click', function () { window.print(); });
+    $('btn-new').addEventListener('click', newBooking);
+  }
 })();
