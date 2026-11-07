@@ -74,6 +74,18 @@ window.OGP.data = {
       morning: ['08:30', '09:15', '10:00', '11:30'],
       afternoon: ['14:00', '15:15', '16:30', '17:45'],
       image: ''
+    },
+    {
+      id: 'ibanez',
+      name: 'Dra. Paula Ibañez',
+      role: 'Odontóloga estética',
+      specialtyId: 'estetica',
+      bio: 'Odontóloga estética especializada en blanqueamiento y diseño de sonrisa. Combina técnica y sensibilidad artística para lograr resultados naturales.',
+      availability: 'Martes, jueves y sábados, 8:30 a. m. – 6:00 p. m.',
+      days: [2, 4, 6],
+      morning: ['08:30', '09:15', '10:00', '11:30'],
+      afternoon: ['14:00', '15:15', '16:30', '17:45'],
+      image: ''
     }
   ],
 };
