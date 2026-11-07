@@ -89,3 +89,6 @@ const DOC_MAX = [10, 11, 7, 12];
 
 const LETRAS = 'abcdefghijklmnopqrstuvwxyzáéíóúüñABCDEFGHIJKLMNOPQRSTUVWXYZÁÉÍÓÚÜÑ';
 const DIGITOS = '0123456789';
+
+/* Aquí se guardan las citas de esta ejecución (no hay base de datos) */
+const citasAgendadas = [];
