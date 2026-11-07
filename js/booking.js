@@ -7,6 +7,7 @@
    ========================================================================== */
 (function () {
   'use strict';
+
   var D = window.OGP.data;
   var U = window.OGP.ui;
   var $ = function (id) { return document.getElementById(id); };
@@ -526,4 +527,6 @@
     $('btn-print').addEventListener('click', function () { window.print(); });
     $('btn-new').addEventListener('click', newBooking);
   }
+
+  document.addEventListener('DOMContentLoaded', init);
 })();
