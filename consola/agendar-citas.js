@@ -327,3 +327,16 @@ async function pedirCelular() {
     }
   }
 }
+
+async function pedirMotivo() {
+  while (true) {
+    const motivo = (await leer('  Motivo de consulta (10 a 250 caracteres): ')).replace(/\s+/g, ' ');
+    if (motivo.length < 10) {
+      console.log('  ✗ Describe un poco más (mínimo 10 caracteres, escribiste ' + motivo.length + ').');
+    } else if (motivo.length > 250) {
+      console.log('  ✗ Es muy largo (máximo 250 caracteres, escribiste ' + motivo.length + ').');
+    } else {
+      return motivo;
+    }
+  }
+}
