@@ -75,4 +75,16 @@
       (hours ? '<p>' + U.icon('clock', 16) + '<span>' + U.esc(hours) + '</span></p>' : '') +
       '</div>';
   }
+
+  function proCard(p) {
+    return '<article class="card pro-card" data-specialty="' + U.esc(p.specialtyId) + '">' +
+      '<div class="media">' + U.mediaHTML(p.name, p.image) + '</div>' +
+      '<div class="pro-body">' +
+        '<h3>' + U.esc(p.name) + '</h3>' +
+        '<p class="pro-role">' + U.esc(p.role) + '</p>' +
+        '<p class="pro-bio">' + U.esc(p.bio) + '</p>' +
+        availabilityHTML(p) +
+        '<a class="btn btn-sm" href="' + bookingLink(p.specialtyId, p.id) + '" aria-label="Agendar cita con ' + U.esc(p.name) + '">Agendar cita</a>' +
+      '</div></article>';
+  }
 })();
