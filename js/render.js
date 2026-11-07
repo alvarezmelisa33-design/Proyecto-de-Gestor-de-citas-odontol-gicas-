@@ -154,4 +154,21 @@
       '<figure><div class="media">' + U.mediaHTML('Después · ' + t.name, t.after) + '</div><figcaption class="is-after">Después</figcaption></figure>' +
       '</div>';
   }
+
+  function storyHTML(t) {
+    var spec = U.byId(D.specialties, t.specialtyId);
+    return '<article class="story" data-specialty="' + U.esc(t.specialtyId) + '">' +
+      '<div class="story-visual">' + storyVisual(t) + '</div>' +
+      '<div class="story-body">' +
+        stars(t.rating) +
+        '<blockquote>“' + U.esc(t.story) + '”</blockquote>' +
+        '<p class="story-author"><strong>' + U.esc(t.name) + '</strong>' + U.esc(spec ? spec.name : '') + ' · ' +
+        '<time datetime="' + U.esc(t.date) + '">' + U.formatLong(U.parseISO(t.date)) + '</time></p>' +
+        '<dl class="story-facts">' +
+          '<div><dt>Tratamiento</dt><dd>' + U.esc(t.treatment) + '</dd></div>' +
+          '<div><dt>Duración</dt><dd>' + U.esc(t.duration) + '</dd></div>' +
+          '<div class="is-result"><dt>Resultado</dt><dd>' + U.esc(t.result) + '</dd></div>' +
+        '</dl>' +
+      '</div></article>';
+  }
 })();
