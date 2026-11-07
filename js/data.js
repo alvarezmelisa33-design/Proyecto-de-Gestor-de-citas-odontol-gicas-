@@ -201,6 +201,18 @@ window.OGP.data = {
       duration: '18 meses',
       result: 'Sonrisa simétrica y mordida estable',
       beforeAfter: true, before: '', after: '', photo: ''
+    },
+    {
+      name: 'Sandra Milena Ospina',
+      specialtyId: 'odontopediatria',
+      rating: 5,
+      date: '2026-06-20',
+      text: 'La primera visita de mi bebé fue tranquila y nos dieron recomendaciones claras.',
+      story: 'No sabía que se podía llevar a un bebé al odontólogo tan pronto. La visita fue tranquila: revisaron sus encías, me enseñaron a limpiarlas y a elegir el cepillo adecuado. Salí con una rutina clara y mucha más confianza como mamá primeriza.',
+      treatment: 'Control del bebé y guía de higiene',
+      duration: '1 sesión',
+      result: 'Rutina de cuidado clara desde los primeros meses',
+      beforeAfter: false, before: '', after: '', photo: ''
     }
   ],
 };
