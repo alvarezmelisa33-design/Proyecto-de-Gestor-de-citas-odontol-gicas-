@@ -343,3 +343,8 @@ a { color: var(--lilac-dark); }
 .slot.is-selected { background: var(--lilac); border-color: var(--lilac); color: var(--white); }
 .slot[disabled] { background: var(--gray-bg); border-color: var(--gray-bg); color: #A0AEC0; text-decoration: line-through; cursor: not-allowed; }
 .slots-empty { color: var(--gray-text); font-size: 0.92rem; background: var(--pastel); padding: 14px; border-radius: var(--radius-sm); }
+
+.assigned { display: none; gap: 12px; align-items: center; background: var(--pastel); border-left: 6px solid var(--lilac); border-radius: var(--radius-sm); padding: 14px 16px; margin-top: 18px; }
+.assigned.is-visible { display: flex; }
+.assigned .icon { color: var(--lilac-dark); }
+.assigned p { margin: 0; font-size: 0.92rem; }
