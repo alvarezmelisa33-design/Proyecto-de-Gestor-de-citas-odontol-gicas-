@@ -54,4 +54,6 @@
     for (var i = 0; i < list.length; i++) { if (list[i].id === id) { return list[i]; } }
     return null;
   }
+
+  function capitalize(text) { return text.charAt(0).toUpperCase() + text.slice(1); }
 })();
