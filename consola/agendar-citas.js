@@ -228,3 +228,37 @@ function mostrarCalendario(indiceProf, anio, mes) {
   }
   console.log('   [dd] = disponible    -- = no disponible\n');
 }
+
+/* ---------------------------------------------------------------------
+   CICLOS ANIDADOS #2: tabla de horas x próximos 7 días
+   Ciclo externo = las 8 horas, ciclo interno = los 7 días
+   --------------------------------------------------------------------- */
+function mostrarSemana(indiceProf) {
+  const todasLasHoras = HORAS_MANANA.concat(HORAS_TARDE);
+  const hoy = new Date();
+
+  console.log('\n   Próximos 7 días (✓ libre   ✗ no disponible)');
+  let encabezado = '   Hora  ';
+  for (let d = 0; d < 7; d++) {
+    const fecha = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate() + d);
+    encabezado += (DIAS_SEMANA[fecha.getDay()] + ' ' + dosDigitos(fecha.getDate())).padEnd(8);
+  }
+  console.log(encabezado);
+
+  for (let h = 0; h < todasLasHoras.length; h++) {
+    let fila = '   ' + todasLasHoras[h] + ' ';
+    for (let d = 0; d < 7; d++) {
+      const fecha = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate() + d);
+      const horarios = horariosDelDia(indiceProf, fecha);
+      let simbolo = '✗';
+      for (let k = 0; k < horarios.length; k++) {
+        if (horarios[k].hora === todasLasHoras[h] && horarios[k].libre) {
+          simbolo = '✓';
+        }
+      }
+      fila += ('  ' + simbolo).padEnd(8);
+    }
+    console.log(fila);
+  }
+  console.log('');
+}
