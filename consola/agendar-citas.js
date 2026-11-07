@@ -444,3 +444,15 @@ async function agendarCita() {
   console.log('  ' + fechaLarga(fecha) + ' a las ' + elegido + ' con ' + PROFESIONALES[indice]);
   console.log('  Preséntate 10 minutos antes. Para reagendar avisa con 4 horas de anticipación.');
 }
+
+function verCitas() {
+  console.log('\n===== CITAS AGENDADAS EN ESTA SESIÓN =====');
+  if (citasAgendadas.length === 0) {
+    console.log('  Aún no hay citas.');
+    return;
+  }
+  for (let i = 0; i < citasAgendadas.length; i++) {
+    const c = citasAgendadas[i];
+    console.log('  ' + (i + 1) + '. ' + c.codigo + ' · ' + c.especialidad + ' · ' + c.fecha + ' ' + c.hora + ' · ' + c.nombre);
+  }
+}
