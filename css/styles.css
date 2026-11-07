@@ -306,3 +306,28 @@ a { color: var(--lilac-dark); }
 .pro-mini .media-empty .icon { width: 28px; height: 28px; }
 .pro-mini p { margin: 0; font-size: 0.88rem; }
 .pro-mini strong { display: block; font-size: 1rem; }
+
+/* Calendario mensual */
+.cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.cal-title { font-family: var(--font-title); font-weight: 700; font-size: 1.15rem; margin: 0; }
+.cal-nav { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--pastel-line); background: var(--white); color: var(--navy); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.cal-nav:hover:not([disabled]) { background: var(--pastel); }
+.cal-nav[disabled] { opacity: 0.35; cursor: not-allowed; }
+.cal-head, .cal-grid, .cal-legend { max-width: 360px; margin-left: auto; margin-right: auto; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.cal-dow { text-align: center; font-size: 0.75rem; font-weight: 700; color: var(--gray-text); padding: 2px 0; }
+.cal-day {
+  height: 40px; border-radius: 10px; border: 2px solid transparent; font-family: var(--font-body);
+  font-weight: 700; font-size: 0.9rem; cursor: pointer; background: var(--pastel); color: var(--navy);
+}
+.cal-day:hover:not([disabled]) { border-color: var(--lilac); }
+.cal-day[disabled] { background: var(--gray-bg); color: #A0AEC0; cursor: not-allowed; font-weight: 500; }
+.cal-day.is-today { border-color: var(--navy); }
+.cal-day.is-selected { background: var(--lilac); color: var(--white); border-color: var(--lilac); }
+.cal-blank { visibility: hidden; }
+.cal-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.8rem; color: var(--gray-text); margin-top: 12px; margin-bottom: 20px; }
+.cal-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.dot { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+.dot-free { background: var(--pastel); border: 1px solid var(--pastel-line); }
+.dot-busy { background: var(--gray-bg); }
+.dot-sel { background: var(--lilac); }
