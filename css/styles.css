@@ -79,3 +79,16 @@ a { color: var(--lilac-dark); }
   position: absolute; width: 1px; height: 1px; overflow: hidden;
   clip: rect(0 0 0 0); white-space: nowrap;
 }
+
+/* 3. LAYOUT ----------------------------------------------------------------- */
+.container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+.section { padding: 48px 0; }
+.section-alt { background: var(--pastel); }
+.section-head { max-width: 640px; margin-bottom: 32px; }
+.section-head p { color: var(--gray-text); }
+.section-foot { margin-top: 28px; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--pastel); color: var(--lilac-dark);
+  font-weight: 700; font-size: 0.85rem; padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
+}
