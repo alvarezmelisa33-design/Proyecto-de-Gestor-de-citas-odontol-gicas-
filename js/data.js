@@ -59,4 +59,21 @@ window.OGP.data = {
       image: ''
     }
   ],
+
+  /* days: días de atención (0 = domingo … 6 = sábado).
+     morning / afternoon: turnos en formato 24 h. Los sábados solo hay turno de la mañana. */
+  professionals: [
+    {
+      id: 'valencia',
+      name: 'Dr. Alejandro Valencia',
+      role: 'Ortodoncista',
+      specialtyId: 'ortodoncia',
+      bio: 'Ortodoncista con más de 10 años de experiencia en alineadores invisibles y brackets estéticos. Le apasiona acompañar cada caso hasta lograr una sonrisa de la que te sientas orgulloso.',
+      availability: 'Lunes a viernes, 8:30 a. m. – 6:00 p. m.',
+      days: [1, 2, 3, 4, 5],
+      morning: ['08:30', '09:15', '10:00', '11:30'],
+      afternoon: ['14:00', '15:15', '16:30', '17:45'],
+      image: ''
+    }
+  ],
 };
