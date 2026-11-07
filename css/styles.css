@@ -449,3 +449,7 @@ a { color: var(--lilac-dark); }
   .btn-sm { min-height: 44px; }
   .hero-actions .btn, .ticket-actions .btn { width: 100%; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
