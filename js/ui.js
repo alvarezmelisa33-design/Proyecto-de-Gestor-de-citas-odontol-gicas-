@@ -56,4 +56,10 @@
   }
 
   function capitalize(text) { return text.charAt(0).toUpperCase() + text.slice(1); }
+
+  /* '2026-09-12' -> '12 de septiembre de 2026' (sin desfase de zona horaria) */
+  function parseISO(iso) {
+    var p = iso.split('-');
+    return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+  }
 })();
