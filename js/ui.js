@@ -102,4 +102,14 @@
       nodes[i].innerHTML = icon(nodes[i].getAttribute('data-icon'), Number(nodes[i].getAttribute('data-size')) || 20);
     }
   }
+
+  /* ---------- Menú único + pie de página ---------- */
+  var NAV = [
+    { id: 'inicio', label: 'Inicio', href: 'index.html' },
+    { id: 'especialidades', label: 'Especialidades', href: 'especialidades.html' },
+    { id: 'equipo', label: 'Equipo Odontológico', href: 'equipo.html' },
+    { id: 'agendamiento', label: 'Agendamiento', href: 'agendamiento.html' },
+    { id: 'testimonios', label: 'Testimonios', href: 'testimonios.html' },
+    { id: 'contacto', label: 'Contacto', href: 'contacto.html' }
+  ];
 })();
