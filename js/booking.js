@@ -283,4 +283,10 @@
       $('full-name').focus({ preventScroll: window.innerWidth > 960 });
     });
   }
+
+  /* ======================================================================
+     Paso 2: formulario con validaciones
+     ====================================================================== */
+  var LETTERS = 'A-Za-zÁÉÍÓÚÜÑáéíóúüñ';
+  var WORD_RE = new RegExp('^[' + LETTERS + ']+(?:[\'’-][' + LETTERS + ']+)*$');
 })();
