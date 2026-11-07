@@ -183,3 +183,13 @@ function horariosDelDia(indiceProf, fecha) {
   }
   return resultado;
 }
+
+function diaDisponible(indiceProf, fecha) {
+  const horarios = horariosDelDia(indiceProf, fecha);
+  for (let i = 0; i < horarios.length; i++) {
+    if (horarios[i].libre) {
+      return true;
+    }
+  }
+  return false;
+}
