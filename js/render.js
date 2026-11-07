@@ -171,4 +171,48 @@
         '</dl>' +
       '</div></article>';
   }
+
+  function stories(mount) {
+    var list = D.testimonials.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    var avg = list.reduce(function (sum, t) { return sum + t.rating; }, 0) / list.length;
+    var avgText = (Math.round(avg * 10) / 10).toFixed(1).replace('.', ',');
+    var chips = '<button type="button" class="chip is-active" data-filter="all" aria-pressed="true">Todas</button>' +
+      D.specialties.map(function (s) {
+        return '<button type="button" class="chip" data-filter="' + U.esc(s.id) + '" aria-pressed="false">' + U.esc(s.name) + '</button>';
+      }).join('');
+
+    mount.innerHTML =
+      '<div class="rating-summary">' +
+        '<strong class="rating-number">' + avgText + '</strong>' +
+        '<div>' + stars(Math.round(avg)) + '<p>Calificación promedio · ' + list.length + ' historias de pacientes</p></div>' +
+      '</div>' +
+      '<div class="filters" role="group" aria-label="Filtrar por especialidad">' + chips + '</div>' +
+      '<div class="stories" id="stories">' + list.map(storyHTML).join('') + '</div>';
+
+    /* El orden alterna izquierda/derecha entre las historias visibles */
+    function zigzag() {
+      var n = 0;
+      mount.querySelectorAll('#stories .story').forEach(function (el) {
+        if (el.hidden) { return; }
+        el.classList.toggle('is-reverse', n % 2 === 1);
+        n++;
+      });
+    }
+    zigzag();
+
+    mount.querySelector('.filters').addEventListener('click', function (e) {
+      var chip = e.target.closest('.chip');
+      if (!chip) { return; }
+      var f = chip.getAttribute('data-filter');
+      mount.querySelectorAll('.filters .chip').forEach(function (c) {
+        var on = c === chip;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-pressed', String(on));
+      });
+      mount.querySelectorAll('#stories .story').forEach(function (el) {
+        el.hidden = f !== 'all' && el.getAttribute('data-specialty') !== f;
+      });
+      zigzag();
+    });
+  }
 })();
