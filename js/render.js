@@ -58,4 +58,11 @@
 
   /* ---------- Equipo ---------- */
   var DAY_SHORT = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+
+  /* [1,2,3,4,5] -> "Lun – Vie"   [2,4,6] -> "Mar · Jue · Sáb" */
+  function daysShort(days) {
+    var consecutive = days.length >= 3 && days.every(function (d, i) { return i === 0 || d === days[i - 1] + 1; });
+    if (consecutive) { return DAY_SHORT[days[0]] + ' – ' + DAY_SHORT[days[days.length - 1]]; }
+    return days.map(function (d) { return DAY_SHORT[d]; }).join(' · ');
+  }
 })();
