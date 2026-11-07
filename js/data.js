@@ -98,6 +98,18 @@ window.OGP.data = {
       morning: ['08:30', '09:15', '10:00', '11:30'],
       afternoon: ['14:00', '15:15', '16:30', '17:45'],
       image: ''
+    },
+    {
+      id: 'carrillo',
+      name: 'Dra. Natalia Carrillo',
+      role: 'Odontopediatra',
+      specialtyId: 'odontopediatria',
+      bio: 'Odontopediatra que convierte la consulta en una experiencia amable para los niños. Trabaja de la mano con las familias para crear buenos hábitos desde temprano.',
+      availability: 'Lunes a sábado, 8:30 a. m. – 6:00 p. m.',
+      days: [1, 2, 3, 4, 5, 6],
+      morning: ['08:30', '09:15', '10:00', '11:30'],
+      afternoon: ['14:00', '15:15', '16:30', '17:45'],
+      image: ''
     }
   ],
 };
