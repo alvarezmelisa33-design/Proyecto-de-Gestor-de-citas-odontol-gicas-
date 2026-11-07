@@ -312,3 +312,18 @@ async function pedirNombre() {
     }
   }
 }
+
+async function pedirCelular() {
+  while (true) {
+    const celular = (await leer('  Celular (10 dígitos): ')).replace(/\s/g, '');
+    if (!soloCaracteres(celular, DIGITOS) || celular === '') {
+      console.log('  ✗ Solo números.');
+    } else if (celular.length !== 10) {
+      console.log('  ✗ Debe tener 10 dígitos (escribiste ' + celular.length + ').');
+    } else if (celular.charAt(0) !== '3') {
+      console.log('  ✗ Los celulares en Colombia empiezan por 3.');
+    } else {
+      return celular;
+    }
+  }
+}
