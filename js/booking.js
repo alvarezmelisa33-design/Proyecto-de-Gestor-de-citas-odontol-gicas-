@@ -58,4 +58,8 @@
     holidayCache[year] = list.map(ymd);
     return holidayCache[year];
   }
+
+  function isHoliday(date) {
+    return holidaysOf(date.getFullYear()).indexOf(ymd(date)) !== -1 || D.closedDates.indexOf(ymd(date)) !== -1;
+  }
 })();
