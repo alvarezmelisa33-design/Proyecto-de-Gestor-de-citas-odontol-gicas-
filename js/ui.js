@@ -68,4 +68,13 @@
     if (withWeekday) { opts.weekday = 'long'; }
     return capitalize(new Intl.DateTimeFormat('es-CO', opts).format(date));
   }
+
+  /* '14:00' -> '2:00 p. m.' */
+  function formatTime(hhmm) {
+    var p = hhmm.split(':');
+    var h = Number(p[0]);
+    var suffix = h >= 12 ? 'p. m.' : 'a. m.';
+    var h12 = h % 12 === 0 ? 12 : h % 12;
+    return h12 + ':' + p[1] + ' ' + suffix;
+  }
 })();
