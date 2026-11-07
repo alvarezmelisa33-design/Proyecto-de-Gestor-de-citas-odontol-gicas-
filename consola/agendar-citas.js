@@ -92,3 +92,10 @@ const DIGITOS = '0123456789';
 
 /* Aquí se guardan las citas de esta ejecución (no hay base de datos) */
 const citasAgendadas = [];
+
+/* ---------------------------------------------------------------------
+   FUNCIONES AUXILIARES
+   --------------------------------------------------------------------- */
+function dosDigitos(n) {
+  return n < 10 ? '0' + n : String(n);
+}
