@@ -138,3 +138,13 @@ async function leerEntero(pregunta, min, max) {
     console.log('  ✗ Escribe un número entre ' + min + ' y ' + max + '.');
   }
 }
+
+async function leerSiNo(pregunta) {
+  while (true) {
+    const texto = (await leer(pregunta + ' (s/n): ')).toLowerCase();
+    if (texto === 's' || texto === 'n') {
+      return texto === 's';
+    }
+    console.log('  ✗ Responde "s" o "n".');
+  }
+}
