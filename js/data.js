@@ -41,6 +41,14 @@ window.OGP.data = {
       description: 'Aclaramos el color de tus dientes de forma segura y diseñamos sonrisas armónicas. Incluye limpieza previa, valoración de sensibilidad y kit de mantenimiento para casa.',
       treatments: ['Blanqueamiento en consultorio', 'Diseño de sonrisa', 'Carillas y resinas estéticas', 'Limpieza profiláctica'],
       image: ''
+    },
+    {
+      id: 'rehabilitacion',
+      name: 'Rehabilitación Oral',
+      short: 'Devolvemos función y estética a tu boca.',
+      description: 'Restauramos la capacidad de masticar y sonreír con coronas, puentes, prótesis e implantes, buscando resultados naturales y duraderos, con un plan por etapas claro y transparente.',
+      treatments: ['Coronas y puentes', 'Prótesis removibles y fijas', 'Implantes dentales', 'Rehabilitación de la mordida'],
+      image: ''
     }
   ],
 };
