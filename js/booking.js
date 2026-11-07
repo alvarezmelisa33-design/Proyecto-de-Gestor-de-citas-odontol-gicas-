@@ -200,4 +200,12 @@
       if (i === n) { item.setAttribute('aria-current', 'step'); } else { item.removeAttribute('aria-current'); }
     }
   }
+
+  function setFormLocked(locked) {
+    var panel = $('form-panel');
+    panel.classList.toggle('is-unlocked', !locked);
+    var controls = $('appointment-form').querySelectorAll('input, select, textarea, button');
+    for (var i = 0; i < controls.length; i++) { controls[i].disabled = locked; }
+    $('form-lock').setAttribute('aria-hidden', String(!locked));
+  }
 })();
