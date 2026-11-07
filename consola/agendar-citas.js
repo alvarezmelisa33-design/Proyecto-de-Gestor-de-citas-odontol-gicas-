@@ -99,3 +99,7 @@ const citasAgendadas = [];
 function dosDigitos(n) {
   return n < 10 ? '0' + n : String(n);
 }
+
+function formatoFecha(fecha) {
+  return fecha.getFullYear() + '-' + dosDigitos(fecha.getMonth() + 1) + '-' + dosDigitos(fecha.getDate());
+}
