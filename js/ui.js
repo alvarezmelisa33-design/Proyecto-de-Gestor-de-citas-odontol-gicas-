@@ -145,4 +145,17 @@
       toggle.innerHTML = icon(open ? 'close' : 'menu', 24);
     });
   }
+
+  function renderFooter() {
+    var mount = document.getElementById('site-footer');
+    if (!mount) { return; }
+    mount.className = 'site-footer';
+    mount.innerHTML =
+      '<div class="container footer-inner">' +
+        '<div><strong>' + esc(D.clinic.name) + '</strong><p>' + esc(D.clinic.tagline) + '</p></div>' +
+        '<div><p>' + icon('pin', 16) + ' ' + esc(D.clinic.address) + '</p>' +
+        '<p>' + icon('phone', 16) + ' ' + esc(D.clinic.phone) + '</p></div>' +
+        '<p class="footer-note">© 2026 ' + esc(D.clinic.name) + ' · Proyecto integrador CESDE · Datos de ejemplo</p>' +
+      '</div>';
+  }
 })();
