@@ -51,3 +51,10 @@ function leer(pregunta) {
     return texto.trim();
   });
 }
+
+/* ---------------------------------------------------------------------
+   DATOS (arreglos paralelos: la posición i de cada arreglo es la misma
+   especialidad / profesional)
+   --------------------------------------------------------------------- */
+const ESPECIALIDADES = ['Ortodoncia', 'Estética y Blanqueamiento', 'Rehabilitación Oral', 'Odontopediatría'];
+const PROFESIONALES = ['Dr. Alejandro Valencia', 'Dra. Paula Ibañez', 'Dra. Lina Salazar', 'Dra. Natalia Carrillo'];
