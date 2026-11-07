@@ -203,3 +203,22 @@ a { color: var(--lilac-dark); }
 .specialty-body li .icon { color: var(--lilac); margin-top: 3px; }
 .pro-line { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; }
 .tag { background: var(--pastel); color: var(--lilac-dark); font-weight: 700; font-size: 0.85rem; padding: 4px 12px; border-radius: 999px; }
+
+/* Equipo */
+.team-group { margin-bottom: 44px; }
+.team-group > h2 { display: flex; align-items: center; gap: 10px; }
+.pro-card { padding: 0; overflow: hidden; }
+.pro-card .media { border-radius: 0; border: 0; border-bottom: 2px dashed var(--pastel-line); aspect-ratio: auto; height: 150px; }
+.pro-card .pro-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.pro-card h3 { margin-bottom: 0; }
+.pro-card .tag { align-self: flex-start; margin-bottom: 4px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.filters .chip { padding: 8px 18px; font-size: 0.9rem; background: var(--white); border-color: var(--pastel-line); }
+.chip.is-active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.pro-role { color: var(--lilac-dark); font-weight: 700; font-size: 0.9rem; margin: 0; }
+.pro-bio { font-size: 0.9rem; line-height: 1.55; color: var(--gray-text); margin: 4px 0 12px; flex: 1;
+  display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; } /* flex:1 alinea cajas y botones entre tarjetas */
+.pro-avail { background: var(--pastel); border-radius: 10px; padding: 8px 12px; margin-bottom: 12px; display: grid; gap: 2px; }
+.pro-avail p { display: flex; gap: 8px; align-items: center; margin: 0; font-weight: 600; font-size: 0.85rem; line-height: 1.4; white-space: nowrap; }
+.pro-avail .icon { color: var(--lilac-dark); }
+.pro-card .btn { align-self: stretch; }
