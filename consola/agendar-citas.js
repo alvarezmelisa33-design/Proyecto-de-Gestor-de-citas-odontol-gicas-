@@ -69,3 +69,6 @@ const DIAS_ATENCION = [
 
 const HORAS_MANANA = ['08:30', '09:15', '10:00', '11:30'];
 const HORAS_TARDE = ['14:00', '15:15', '16:30', '17:45'];
+
+const DIAS_SEMANA = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+const MESES = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
