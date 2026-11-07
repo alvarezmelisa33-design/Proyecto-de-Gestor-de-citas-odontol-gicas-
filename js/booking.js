@@ -46,4 +46,16 @@
     var shift = (8 - date.getDay()) % 7; /* lunes se queda; otro día pasa al lunes siguiente */
     return new Date(date.getFullYear(), date.getMonth(), date.getDate() + shift);
   }
+
+  function holidaysOf(year) {
+    if (holidayCache[year]) { return holidayCache[year]; }
+    var list = [];
+    [[0, 1], [4, 1], [6, 20], [7, 7], [11, 8], [11, 25]].forEach(function (md) { list.push(new Date(year, md[0], md[1])); });
+    [[0, 6], [2, 19], [5, 29], [7, 15], [9, 12], [10, 1], [10, 11]].forEach(function (md) { list.push(nextMonday(new Date(year, md[0], md[1]))); });
+    var pascua = easter(year);
+    [-3, -2].forEach(function (n) { list.push(new Date(year, pascua.getMonth(), pascua.getDate() + n)); });
+    [39, 60, 68].forEach(function (n) { list.push(nextMonday(new Date(year, pascua.getMonth(), pascua.getDate() + n))); });
+    holidayCache[year] = list.map(ymd);
+    return holidayCache[year];
+  }
 })();
