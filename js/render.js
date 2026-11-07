@@ -129,4 +129,18 @@
     }
     return '<div class="stars" role="img" aria-label="Calificación: ' + rating + ' de 5">' + out + '</div>';
   }
+
+  function testimonials(mount) {
+    var limit = Number(mount.getAttribute('data-limit')) || D.testimonials.length;
+    mount.innerHTML = D.testimonials.slice(0, limit).map(function (t) {
+      var spec = U.byId(D.specialties, t.specialtyId);
+      return '<article class="card quote">' +
+        stars(t.rating) +
+        '<blockquote>“' + U.esc(t.text) + '”</blockquote>' +
+        '<p class="quote-meta"><strong>' + U.esc(t.name) + '</strong>' +
+        U.esc(spec ? spec.name : '') + ' · ' +
+        '<time datetime="' + U.esc(t.date) + '">' + U.formatLong(U.parseISO(t.date)) + '</time></p>' +
+        '</article>';
+    }).join('');
+  }
 })();
