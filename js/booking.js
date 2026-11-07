@@ -364,4 +364,13 @@
   };
 
   function wrapperOf(input) { return input.closest('.field'); }
+
+  function showResult(field, message) {
+    var input = $(field.el);
+    var wrap = wrapperOf(input);
+    wrap.classList.toggle('has-error', !!message);
+    wrap.classList.toggle('is-valid', !message && !!input.value);
+    wrap.querySelector('.msg').textContent = message;
+    input.setAttribute('aria-invalid', message ? 'true' : 'false');
+  }
 })();
