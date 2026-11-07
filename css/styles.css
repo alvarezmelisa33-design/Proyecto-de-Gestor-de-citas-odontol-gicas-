@@ -134,3 +134,17 @@ a { color: var(--lilac-dark); }
 .footer-inner p { margin: 0 0 4px; font-size: 0.92rem; }
 .footer-inner strong { font-family: var(--font-title); color: var(--white); font-size: 1.1rem; }
 .footer-note { grid-column: 1 / -1; border-top: 1px solid #3A5580; padding-top: 16px; color: #A0B0C8; font-size: 0.82rem; }
+
+/* 5. BOTONES Y MARCADOR DE IMAGEN -------------------------------------------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 24px; border-radius: 999px; border: 2px solid var(--lilac);
+  background: var(--lilac); color: var(--white);
+  font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+  text-decoration: none; cursor: pointer; transition: background 0.2s, transform 0.2s;
+}
+.btn:hover { background: var(--lilac-dark); border-color: var(--lilac-dark); transform: translateY(-1px); }
+.btn-outline { background: var(--white); color: var(--lilac-dark); }
+.btn-outline:hover { background: var(--pastel); color: var(--lilac-dark); }
+.btn-sm { padding: 9px 18px; font-size: 0.92rem; }
+.btn[disabled] { background: #CBD5E0; border-color: #CBD5E0; color: #718096; cursor: not-allowed; transform: none; }
