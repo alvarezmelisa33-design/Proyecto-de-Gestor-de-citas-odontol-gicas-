@@ -109,4 +109,14 @@
     }).join('');
     $('professional').value = state.proId;
   }
+
+  function renderProMini() {
+    var p = currentPro();
+    if (!p) { $('pro-mini').innerHTML = ''; return; }
+    $('pro-mini').innerHTML =
+      '<div class="media">' + U.mediaHTML(p.name, p.image) + '</div>' +
+      '<div><strong>' + U.esc(p.name) + '</strong>' +
+      '<p>' + U.esc(p.role) + '</p>' +
+      '<p>' + U.icon('clock', 14) + ' ' + U.esc(p.availability) + '</p></div>';
+  }
 })();
