@@ -103,3 +103,7 @@ function dosDigitos(n) {
 function formatoFecha(fecha) {
   return fecha.getFullYear() + '-' + dosDigitos(fecha.getMonth() + 1) + '-' + dosDigitos(fecha.getDate());
 }
+
+function fechaLarga(fecha) {
+  return DIAS_SEMANA[fecha.getDay()] + ' ' + fecha.getDate() + ' de ' + MESES[fecha.getMonth()] + ' de ' + fecha.getFullYear();
+}
