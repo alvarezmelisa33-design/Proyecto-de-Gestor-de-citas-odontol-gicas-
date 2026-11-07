@@ -217,4 +217,15 @@
     setFormLocked(true);
     setStep(1);
   }
+
+  /* Mes del primer día con cupo (busca hasta 90 días); si no hay, el mes actual */
+  function firstAvailableView() {
+    var now = new Date();
+    var pro = currentPro();
+    for (var i = 0; i < 90; i++) {
+      var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+      if (dayHasFree(pro, d)) { return { y: d.getFullYear(), m: d.getMonth() }; }
+    }
+    return { y: now.getFullYear(), m: now.getMonth() };
+  }
 })();
