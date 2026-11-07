@@ -55,4 +55,7 @@
         '</div></article>';
     }).join('');
   }
+
+  /* ---------- Equipo ---------- */
+  var DAY_SHORT = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
 })();
