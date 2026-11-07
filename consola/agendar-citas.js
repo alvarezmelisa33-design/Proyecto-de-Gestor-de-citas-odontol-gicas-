@@ -456,3 +456,29 @@ function verCitas() {
     console.log('  ' + (i + 1) + '. ' + c.codigo + ' · ' + c.especialidad + ' · ' + c.fecha + ' ' + c.hora + ' · ' + c.nombre);
   }
 }
+
+/* ---------------------------------------------------------------------
+   PROGRAMA PRINCIPAL: menú con do...while
+   --------------------------------------------------------------------- */
+async function main() {
+  console.log('==========================================');
+  console.log('  ORAL GROUP PRO · Gestor de citas (consola)');
+  console.log('==========================================');
+
+  let opcion;
+  do {
+    console.log('\n1. Agendar una cita');
+    console.log('2. Ver citas agendadas');
+    console.log('3. Salir');
+    opcion = await leerEntero('Elige una opción: ', 1, 3);
+
+    if (opcion === 1) {
+      await agendarCita();
+    } else if (opcion === 2) {
+      verCitas();
+    }
+  } while (opcion !== 3);
+
+  console.log('\n¡Gracias por usar Oral Group Pro!');
+  rl.close();
+}
