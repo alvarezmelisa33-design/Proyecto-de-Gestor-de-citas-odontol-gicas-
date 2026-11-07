@@ -10,4 +10,6 @@
   var D = window.OGP.data;
   var U = window.OGP.ui;
   var $ = function (id) { return document.getElementById(id); };
+
+  var state = { specialtyId: '', proId: '', date: null, time: '', view: null };
 })();
