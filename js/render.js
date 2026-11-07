@@ -87,4 +87,37 @@
         '<a class="btn btn-sm" href="' + bookingLink(p.specialtyId, p.id) + '" aria-label="Agendar cita con ' + U.esc(p.name) + '">Agendar cita</a>' +
       '</div></article>';
   }
+
+  function team(mount) {
+    var limit = Number(mount.getAttribute('data-limit')) || 0;
+    if (limit) {
+      mount.innerHTML = D.professionals.slice(0, limit).map(proCard).join('');
+      return;
+    }
+    /* Página completa: todos en una rejilla, ordenados por especialidad + filtros */
+    var order = D.specialties.map(function (s) { return s.id; });
+    var sorted = D.professionals.slice().sort(function (x, y) {
+      return order.indexOf(x.specialtyId) - order.indexOf(y.specialtyId);
+    });
+    var chips = '<button type="button" class="chip is-active" data-filter="all" aria-pressed="true">Todas</button>' +
+      D.specialties.map(function (s) {
+        return '<button type="button" class="chip" data-filter="' + U.esc(s.id) + '" aria-pressed="false">' + U.esc(s.name) + '</button>';
+      }).join('');
+    mount.innerHTML = '<div class="filters" role="group" aria-label="Filtrar por especialidad">' + chips + '</div>' +
+      '<div class="grid-3" id="team-grid">' + sorted.map(proCard).join('') + '</div>';
+
+    mount.querySelector('.filters').addEventListener('click', function (e) {
+      var chip = e.target.closest('.chip');
+      if (!chip) { return; }
+      var f = chip.getAttribute('data-filter');
+      mount.querySelectorAll('.filters .chip').forEach(function (c) {
+        var on = c === chip;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-pressed', String(on));
+      });
+      mount.querySelectorAll('#team-grid .pro-card').forEach(function (card) {
+        card.hidden = f !== 'all' && card.getAttribute('data-specialty') !== f;
+      });
+    });
+  }
 })();
