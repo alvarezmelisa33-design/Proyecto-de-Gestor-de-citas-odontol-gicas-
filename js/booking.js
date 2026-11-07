@@ -228,4 +228,14 @@
     }
     return { y: now.getFullYear(), m: now.getMonth() };
   }
+
+  function onSpecialtyChange(id) {
+    state.specialtyId = id;
+    state.proId = professionalsOf(id)[0].id;
+    state.view = firstAvailableView();
+    renderProfessionalSelect();
+    renderProMini();
+    resetSelection();
+    renderCalendar();
+  }
 })();
