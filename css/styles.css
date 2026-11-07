@@ -123,3 +123,8 @@ a { color: var(--lilac-dark); }
 }
 .main-nav a:hover { background: var(--navy-soft); }
 .main-nav a.is-active { background: var(--lilac); }
+
+.nav-toggle {
+  display: none; background: transparent; border: 2px solid #4A6A9A; color: var(--white);
+  border-radius: 10px; padding: 8px; cursor: pointer;
+}
