@@ -119,4 +119,42 @@
       '<p>' + U.esc(p.role) + '</p>' +
       '<p>' + U.icon('clock', 14) + ' ' + U.esc(p.availability) + '</p></div>';
   }
+
+  function renderCalendar() {
+    var pro = currentPro();
+    var view = state.view;
+    var title = U.capitalize(new Intl.DateTimeFormat('es-CO', { month: 'long', year: 'numeric' })
+      .format(new Date(view.y, view.m, 1)));
+    $('cal-title').textContent = title;
+
+    var now = new Date();
+    var startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var cur = { y: now.getFullYear(), m: now.getMonth() };
+    var monthsAhead = (view.y - cur.y) * 12 + (view.m - cur.m);
+    $('cal-prev').disabled = monthsAhead <= 0;
+    $('cal-next').disabled = monthsAhead >= 2;
+
+    var html = ['L', 'M', 'X', 'J', 'V', 'S', 'D'].map(function (d) {
+      return '<div class="cal-dow" aria-hidden="true">' + d + '</div>';
+    }).join('');
+
+    var first = new Date(view.y, view.m, 1);
+    var offset = (first.getDay() + 6) % 7; /* semana empieza en lunes */
+    for (var b = 0; b < offset; b++) { html += '<span class="cal-blank"></span>'; }
+
+    var daysInMonth = new Date(view.y, view.m + 1, 0).getDate();
+    for (var d = 1; d <= daysInMonth; d++) {
+      var date = new Date(view.y, view.m, d);
+      var isPast = date < startOfToday;
+      var available = !isPast && dayHasFree(pro, date);
+      var cls = 'cal-day';
+      if (date.getTime() === startOfToday.getTime()) { cls += ' is-today'; }
+      var selected = state.date && ymd(state.date) === ymd(date);
+      if (selected) { cls += ' is-selected'; }
+      html += '<button type="button" class="' + cls + '" data-date="' + ymd(date) + '"' +
+        (available ? '' : ' disabled') + ' aria-pressed="' + (selected ? 'true' : 'false') + '"' +
+        ' aria-label="' + U.formatLong(date, true) + (available ? ', disponible' : ', no disponible') + '">' + d + '</button>';
+    }
+    $('cal-grid').innerHTML = html;
+  }
 })();
