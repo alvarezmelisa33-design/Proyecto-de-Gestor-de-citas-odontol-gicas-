@@ -153,6 +153,18 @@ window.OGP.data = {
       duration: '14 meses',
       result: 'Apiñamiento corregido y mordida alineada',
       beforeAfter: true, before: '', after: '', photo: ''
+    },
+    {
+      name: 'Carlos Andrés Ruiz',
+      specialtyId: 'odontopediatria',
+      rating: 5,
+      date: '2026-08-28',
+      text: 'Mi hijo ya no le tiene miedo al odontólogo. La doctora le explicó todo con juegos.',
+      story: 'Mi hijo de 6 años lloraba solo de escuchar la palabra "dentista". La doctora le mostró los instrumentos como si fueran juguetes, le explicó cada paso con calma y le dejó escoger el sabor de la pasta. Salió feliz con su sticker y pidió volver. Como papá, ver eso no tiene precio.',
+      treatment: 'Primera valoración y sellantes',
+      duration: '2 sesiones',
+      result: 'Cero miedo en la consulta y molares protegidos',
+      beforeAfter: false, before: '', after: '', photo: ''
     }
   ],
 };
