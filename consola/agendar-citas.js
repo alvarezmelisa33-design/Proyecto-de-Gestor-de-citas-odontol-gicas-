@@ -72,3 +72,11 @@ const HORAS_TARDE = ['14:00', '15:15', '16:30', '17:45'];
 
 const DIAS_SEMANA = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
 const MESES = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+/* Festivos de Colombia (la clínica no atiende). Formato AAAA-MM-DD */
+const FESTIVOS = [
+  '2026-11-02', '2026-11-16', '2026-12-08', '2026-12-25',
+  '2027-01-01', '2027-01-11', '2027-03-22', '2027-03-25', '2027-03-26', '2027-05-01',
+  '2027-05-10', '2027-05-31', '2027-06-07', '2027-07-05', '2027-07-20', '2027-08-07',
+  '2027-08-16', '2027-10-18', '2027-11-01', '2027-11-15', '2027-12-08', '2027-12-25'
+];
