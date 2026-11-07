@@ -12,4 +12,10 @@
   'use strict';
   var D = window.OGP.data;
   var U = window.OGP.ui;
+
+  function bookingLink(specialtyId, professionalId) {
+    var q = '?esp=' + encodeURIComponent(specialtyId);
+    if (professionalId) { q += '&prof=' + encodeURIComponent(professionalId); }
+    return 'agendamiento.html' + q;
+  }
 })();
