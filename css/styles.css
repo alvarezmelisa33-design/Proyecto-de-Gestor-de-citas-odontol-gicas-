@@ -176,3 +176,12 @@ a { color: var(--lilac-dark); }
 }
 .card .btn { align-self: flex-start; margin-top: auto; }
 .section-alt .card { border-color: transparent; }
+
+.shortcut { text-decoration: none; color: var(--navy); transition: transform 0.2s, box-shadow 0.2s; }
+.shortcut:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.shortcut p { color: var(--gray-text); font-size: 0.92rem; margin: 0; }
+.shortcut-icon {
+  width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+  background: var(--pastel); color: var(--lilac-dark); border-radius: 14px;
+}
+.shortcut-more { color: var(--lilac-dark); font-weight: 700; font-size: 0.9rem; margin-top: auto; padding-top: 8px; }
