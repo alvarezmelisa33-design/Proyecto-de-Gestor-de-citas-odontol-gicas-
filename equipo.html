@@ -1,48 +1,203 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipo Odontológico | Oral Group Pro</title>
-</head>
-<body>
-  <header>
-    <p>Oral Group Pro</p>
-    <nav>
-      <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="especialidades.html">Especialidades</a></li>
-          <li><a href="equipo.html">Equipo Odontológico</a></li>
-          <li><a href="agendamiento.html">Agendamiento</a></li>
-          <li><a href="testimonios.html">Testimonios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <h1>Equipo Odontológico</h1>
-    <a href="agendamiento.html">Agendar cita</a>
-
-    <section>
-      <h2>Ortodoncia</h2>
-    </section>
-
-    <section>
-      <h2>Estética y Blanqueamiento</h2>
-    </section>
-
-    <section>
-      <h2>Rehabilitación Oral</h2>
-    </section>
-
-    <section>
-      <h2>Odontopediatría</h2>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2026 Oral Group Pro · Proyecto integrador CESDE</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo Odontológico | Oral Group Pro</title>
+    <meta name="description" content="Conoce a los odontólogos de Oral Group Pro, organizados por especialidad.">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header id="site-header" class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Oral Group Pro – ir al inicio">
+          <span class="brand-mark"></span>
+          <span class="brand-text">
+            <strong>Oral Group Pro</strong>
+            <small>Centro Odontológico &amp; Estética de Sonrisas</small>
+          </span>
+        </a>
+        <nav class="main-nav" id="main-nav" aria-label="Menú principal">
+          <ul>
+            <li>
+              <a href="index.html">Inicio</a>
+            </li>
+            <li>
+              <a href="especialidades.html">Especialidades</a>
+            </li>
+            <li>
+              <a href="equipo.html" class="is-active" aria-current="page">Equipo Odontológico</a>
+            </li>
+            <li>
+              <a href="agendamiento.html">Agendamiento</a>
+            </li>
+            <li>
+              <a href="testimonios.html">Testimonios</a>
+            </li>
+            <li>
+              <a href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="page-title">
+      <div class="container">
+        <h1>Equipo Odontológico</h1>
+        <p>Profesionales agrupados por especialidad. Agenda directamente con quien prefieras.</p>
+      </div>
+    </div>
+    <main id="contenido" class="section">
+      <div class="container">
+        <div class="filters" role="group" aria-label="Filtrar por especialidad">
+          <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">Todas</button>
+          <button type="button" class="chip" data-filter="ortodoncia" aria-pressed="false">Ortodoncia</button>
+          <button type="button" class="chip" data-filter="estetica" aria-pressed="false">Estética y Blanqueamiento</button>
+          <button type="button" class="chip" data-filter="rehabilitacion" aria-pressed="false">Rehabilitación Oral</button>
+          <button type="button" class="chip" data-filter="odontopediatria" aria-pressed="false">Odontopediatría</button>
+        </div>
+        <div class="grid-3" id="team-grid">
+          <article class="card pro-card" data-specialty="ortodoncia">
+            <div class="media">
+              <div class="media-empty" role="img" aria-label="Espacio para imagen: Dr. Alejandro Valencia">
+                <span>Dr. Alejandro Valencia</span>
+              </div>
+            </div>
+            <div class="pro-body">
+              <h3>Dr. Alejandro Valencia</h3>
+              <p class="pro-role">Ortodoncista</p>
+              <p class="pro-bio">Ortodoncista con más de 10 años de experiencia en alineadores invisibles y brackets estéticos. Le apasiona acompañar cada caso hasta lograr una sonrisa de la que te sientas orgulloso.</p>
+              <div class="pro-avail">
+                <p>
+                  <span>Lun – Vie</span>
+                </p>
+                <p>
+                  <span>8:30 a. m. – 6:00 p. m.</span>
+                </p>
+              </div>
+              <a class="btn btn-sm" href="agendamiento.html?esp=ortodoncia&amp;prof=valencia" aria-label="Agendar cita con Dr. Alejandro Valencia">Agendar cita</a>
+            </div>
+          </article>
+          <article class="card pro-card" data-specialty="ortodoncia">
+            <div class="media">
+              <div class="media-empty" role="img" aria-label="Espacio para imagen: Dra. Camila Restrepo">
+                <span>Dra. Camila Restrepo</span>
+              </div>
+            </div>
+            <div class="pro-body">
+              <h3>Dra. Camila Restrepo</h3>
+              <p class="pro-role">Ortodoncista</p>
+              <p class="pro-bio">Ortodoncista con enfoque en niños y adolescentes. Acompaña a las familias con un trato cercano y planes de tratamiento claros desde la primera cita.</p>
+              <div class="pro-avail">
+                <p>
+                  <span>Lun · Mié · Vie</span>
+                </p>
+                <p>
+                  <span>8:30 a. m. – 6:00 p. m.</span>
+                </p>
+              </div>
+              <a class="btn btn-sm" href="agendamiento.html?esp=ortodoncia&amp;prof=restrepo" aria-label="Agendar cita con Dra. Camila Restrepo">Agendar cita</a>
+            </div>
+          </article>
+          <article class="card pro-card" data-specialty="estetica">
+            <div class="media">
+              <div class="media-empty" role="img" aria-label="Espacio para imagen: Dra. Paula Ibañez">
+                <span>Dra. Paula Ibañez</span>
+              </div>
+            </div>
+            <div class="pro-body">
+              <h3>Dra. Paula Ibañez</h3>
+              <p class="pro-role">Odontóloga estética</p>
+              <p class="pro-bio">Odontóloga estética especializada en blanqueamiento y diseño de sonrisa. Combina técnica y sensibilidad artística para lograr resultados naturales.</p>
+              <div class="pro-avail">
+                <p>
+                  <span>Mar · Jue · Sáb</span>
+                </p>
+                <p>
+                  <span>8:30 a. m. – 6:00 p. m.</span>
+                </p>
+              </div>
+              <a class="btn btn-sm" href="agendamiento.html?esp=estetica&amp;prof=ibanez" aria-label="Agendar cita con Dra. Paula Ibañez">Agendar cita</a>
+            </div>
+          </article>
+          <article class="card pro-card" data-specialty="estetica">
+            <div class="media">
+              <div class="media-empty" role="img" aria-label="Espacio para imagen: Dr. Andrés Mejía">
+                <span>Dr. Andrés Mejía</span>
+              </div>
+            </div>
+            <div class="pro-body">
+              <h3>Dr. Andrés Mejía</h3>
+              <p class="pro-role">Odontólogo estético</p>
+              <p class="pro-bio">Odontólogo estético especializado en blanqueamiento y carillas. Prioriza resultados naturales y el cuidado del esmalte en cada procedimiento.</p>
+              <div class="pro-avail">
+                <p>
+                  <span>Lun · Mié · Vie</span>
+                </p>
+                <p>
+                  <span>8:30 a. m. – 6:00 p. m.</span>
+                </p>
+              </div>
+              <a class="btn btn-sm" href="agendamiento.html?esp=estetica&amp;prof=mejia" aria-label="Agendar cita con Dr. Andrés Mejía">Agendar cita</a>
+            </div>
+          </article>
+          <article class="card pro-card" data-specialty="rehabilitacion">
+            <div class="media">
+              <div class="media-empty" role="img" aria-label="Espacio para imagen: Dra. Lina Salazar">
+                <span>Dra. Lina Salazar</span>
+              </div>
+            </div>
+            <div class="pro-body">
+              <h3>Dra. Lina Salazar</h3>
+              <p class="pro-role">Rehabilitadora oral</p>
+              <p class="pro-bio">Rehabilitadora oral con experiencia en prótesis, coronas e implantes. Explica cada etapa del tratamiento con claridad para que decidas con tranquilidad.</p>
+              <div class="pro-avail">
+                <p>
+                  <span>Lun · Mié · Vie</span>
+                </p>
+                <p>
+                  <span>8:30 a. m. – 6:00 p. m.</span>
+                </p>
+              </div>
+              <a class="btn btn-sm" href="agendamiento.html?esp=rehabilitacion&amp;prof=salazar" aria-label="Agendar cita con Dra. Lina Salazar">Agendar cita</a>
+            </div>
+          </article>
+          <article class="card pro-card" data-specialty="odontopediatria">
+            <div class="media">
+              <div class="media-empty" role="img" aria-label="Espacio para imagen: Dra. Natalia Carrillo">
+                <span>Dra. Natalia Carrillo</span>
+              </div>
+            </div>
+            <div class="pro-body">
+              <h3>Dra. Natalia Carrillo</h3>
+              <p class="pro-role">Odontopediatra</p>
+              <p class="pro-bio">Odontopediatra que convierte la consulta en una experiencia amable para los niños. Trabaja de la mano con las familias para crear buenos hábitos desde temprano.</p>
+              <div class="pro-avail">
+                <p>
+                  <span>Lun – Sáb</span>
+                </p>
+                <p>
+                  <span>8:30 a. m. – 6:00 p. m.</span>
+                </p>
+              </div>
+              <a class="btn btn-sm" href="agendamiento.html?esp=odontopediatria&amp;prof=carrillo" aria-label="Agendar cita con Dra. Natalia Carrillo">Agendar cita</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+    <footer id="site-footer" class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Oral Group Pro</strong>
+          <p>Centro Odontológico &amp; Estética de Sonrisas</p>
+        </div>
+        <div>
+          <p>Carrera 43A # 10-25, Medellín, Antioquia</p>
+          <p>(604) 555 01 23</p>
+        </div>
+        <p class="footer-note">© 2026 Oral Group Pro · Proyecto integrador CESDE · Datos de ejemplo</p>
+      </div>
+    </footer>
+  </body>
 </html>
