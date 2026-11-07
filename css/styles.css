@@ -195,3 +195,11 @@ a { color: var(--lilac-dark); }
   display: flex; align-items: center; justify-content: center;
 }
 .step-card p { color: var(--gray-text); margin: 0; }
+
+/* Especialidades (detalle) */
+.specialty-item { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 28px; align-items: start; margin-bottom: 32px; scroll-margin-top: 96px; }
+.specialty-body ul { margin: 12px 0 16px; display: grid; gap: 6px; }
+.specialty-body li { display: flex; gap: 8px; align-items: flex-start; }
+.specialty-body li .icon { color: var(--lilac); margin-top: 3px; }
+.pro-line { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; }
+.tag { background: var(--pastel); color: var(--lilac-dark); font-weight: 700; font-size: 0.85rem; padding: 4px 12px; border-radius: 999px; }
