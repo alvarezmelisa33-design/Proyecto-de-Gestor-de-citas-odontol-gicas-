@@ -407,3 +407,15 @@ a { color: var(--lilac-dark); }
 .hours td { padding: 6px 0; border-bottom: 1px solid var(--pastel-line); font-size: 0.92rem; }
 .hours td:last-child { text-align: right; font-weight: 600; color: var(--navy); }
 .map-media { aspect-ratio: 4 / 3; }
+
+/* 10. RESPONSIVE E IMPRESIÓN ----------------------------------------------------- */
+@media (max-width: 960px) {
+  .story { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 22px; }
+  .story.is-reverse .story-visual { order: 0; }
+  .ba { max-width: 460px; }
+  .grid-3 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-inner, .booking-grid, .contact-layout { grid-template-columns: 1fr; }
+  .specialty-item { grid-template-columns: 240px minmax(0, 1fr); }
+}
