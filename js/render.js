@@ -34,4 +34,25 @@
         '</a>';
     }).join('');
   }
+
+  /* ---------- Especialidades: detalle ---------- */
+  function specialties(mount) {
+    mount.innerHTML = D.specialties.map(function (s) {
+      var pros = professionalsOf(s.id).map(function (p) {
+        return '<span class="tag">' + U.esc(p.name) + '</span>';
+      }).join('');
+      var treatments = s.treatments.map(function (t) {
+        return '<li>' + U.icon('check', 18) + '<span>' + U.esc(t) + '</span></li>';
+      }).join('');
+      return '<article class="card specialty-item" id="' + U.esc(s.id) + '">' +
+        '<div class="media">' + U.mediaHTML(s.name, s.image) + '</div>' +
+        '<div class="specialty-body">' +
+          '<h2>' + U.esc(s.name) + '</h2>' +
+          '<p>' + U.esc(s.description) + '</p>' +
+          '<ul>' + treatments + '</ul>' +
+          '<div class="pro-line"><strong>Profesional:</strong> ' + pros + '</div>' +
+          '<a class="btn" href="' + bookingLink(s.id) + '">Agendar cita en ' + U.esc(s.name) + '</a>' +
+        '</div></article>';
+    }).join('');
+  }
 })();
