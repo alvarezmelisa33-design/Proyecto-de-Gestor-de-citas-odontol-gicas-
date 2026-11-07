@@ -362,4 +362,6 @@
       validate: function () { return $('consent').checked ? '' : 'Debes aceptar el tratamiento de tus datos para continuar.'; }
     }
   };
+
+  function wrapperOf(input) { return input.closest('.field'); }
 })();
