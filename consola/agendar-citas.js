@@ -296,3 +296,19 @@ async function pedirDocumento() {
     return { tipo: SIGLAS_DOC[tipo], numero: numero };
   }
 }
+
+async function pedirNombre() {
+  while (true) {
+    const nombre = (await leer('  Nombre completo (nombre y apellido): ')).replace(/\s+/g, ' ');
+    const palabras = nombre.split(' ');
+    if (nombre === '' || palabras.length < 2) {
+      console.log('  ✗ Escribe al menos tu nombre y un apellido.');
+    } else if (!soloCaracteres(nombre, LETRAS + ' ')) {
+      console.log('  ✗ Usa solo letras.');
+    } else if (nombre.length > 60) {
+      console.log('  ✗ Máximo 60 caracteres.');
+    } else {
+      return nombre;
+    }
+  }
+}
