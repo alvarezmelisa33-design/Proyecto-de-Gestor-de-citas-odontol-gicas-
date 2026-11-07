@@ -34,3 +34,20 @@ rl.on('close', function () {
     quienEspera(null);
   }
 });
+
+function leer(pregunta) {
+  process.stdout.write(pregunta);
+  return new Promise(function (resolver) {
+    if (lineasPendientes.length > 0) {
+      resolver(lineasPendientes.shift());
+    } else {
+      quienEspera = resolver;
+    }
+  }).then(function (texto) {
+    if (texto === null) {
+      console.log('\nSe cerró la entrada. Hasta pronto.');
+      process.exit(0);
+    }
+    return texto.trim();
+  });
+}
