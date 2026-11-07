@@ -62,4 +62,9 @@
   function isHoliday(date) {
     return holidaysOf(date.getFullYear()).indexOf(ymd(date)) !== -1 || D.closedDates.indexOf(ymd(date)) !== -1;
   }
+
+  function professionalsOf(specialtyId) {
+    return D.professionals.filter(function (p) { return p.specialtyId === specialtyId; });
+  }
+  function currentPro() { return U.byId(D.professionals, state.proId); }
 })();
