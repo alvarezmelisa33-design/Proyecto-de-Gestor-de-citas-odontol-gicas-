@@ -73,3 +73,9 @@ a { color: var(--lilac-dark); }
   background: var(--navy); color: var(--white); padding: 10px 16px; border-radius: 8px;
 }
 .skip-link:focus { top: 12px; }
+
+.icon { flex-shrink: 0; vertical-align: middle; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
