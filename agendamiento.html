@@ -188,6 +188,29 @@
                 <p>Todos los campos son obligatorios.</p>
               </div>
             </div>
+            <form id="appointment-form" novalidate autocomplete="on">
+              <div class="row-2">
+                <div class="field">
+                  <label for="doc-type">Tipo de documento</label>
+                  <select id="doc-type" class="select">
+                    <option value="CC">Cédula de ciudadanía</option>
+                    <option value="TI">Tarjeta de identidad</option>
+                    <option value="CE">Cédula de extranjería</option>
+                    <option value="PA">Pasaporte</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="doc-number">
+                    <span>Número de documento</span>
+                  </label>
+                  <input id="doc-number" class="input" type="text" inputmode="numeric" autocomplete="off" maxlength="10" aria-describedby="doc-help err-doc" aria-invalid="false" required>
+                  <p class="field-help" id="doc-help">Solo números, entre 6 y 10 dígitos.</p>
+                  <p class="field-error" id="err-doc" role="alert">
+                    <span class="msg"></span>
+                  </p>
+                </div>
+              </div>
+            </form>
           </section>
         </div>
       </div>
