@@ -177,6 +177,18 @@ window.OGP.data = {
       duration: '1 sesión + kit de mantenimiento',
       result: 'Varios tonos más claros, sin sensibilidad',
       beforeAfter: true, before: '', after: '', photo: ''
+    },
+    {
+      name: 'Jorge Alberto Castaño',
+      specialtyId: 'rehabilitacion',
+      rating: 5,
+      date: '2026-07-17',
+      text: 'Gracias a mi nueva prótesis volví a comer de todo sin molestias.',
+      story: 'Llevaba años masticando solo de un lado. La doctora me presentó el plan por etapas con los costos desde el inicio, sin sorpresas. Las citas fueron cómodas y hoy tengo una prótesis fija que parece mis propios dientes. Volví a comer asado con mi familia, y eso para mí lo dice todo.',
+      treatment: 'Prótesis fija sobre implantes',
+      duration: '5 meses',
+      result: 'Masticación recuperada y sonrisa completa',
+      beforeAfter: true, before: '', after: '', photo: ''
     }
   ],
 };
