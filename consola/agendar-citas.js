@@ -152,3 +152,34 @@ async function leerSiNo(pregunta) {
 /* ---------------------------------------------------------------------
    DISPONIBILIDAD (se calcula con la fecha y hora reales del computador)
    --------------------------------------------------------------------- */
+
+/* Devuelve la lista de horarios de un día: [{ hora, libre }, ...]
+   Lista vacía = ese día no hay atención. */
+function horariosDelDia(indiceProf, fecha) {
+  const resultado = [];
+
+  if (!DIAS_ATENCION[indiceProf].includes(fecha.getDay())) {
+    return resultado;
+  }
+  if (FESTIVOS.includes(formatoFecha(fecha))) {
+    return resultado;
+  }
+
+  /* Sábados solo hay turno de la mañana */
+  const turnos = fecha.getDay() === 6 ? [HORAS_MANANA] : [HORAS_MANANA, HORAS_TARDE];
+  const limite = new Date(Date.now() + 60 * 60 * 1000); /* mínimo 1 hora de anticipación */
+  let contador = 0;
+
+  for (let t = 0; t < turnos.length; t++) {
+    for (let h = 0; h < turnos[t].length; h++) {
+      const partes = turnos[t][h].split(':');
+      const momento = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), Number(partes[0]), Number(partes[1]));
+      const yaPaso = momento <= limite;
+      /* Ocupación simulada: una de cada cinco horas ya está tomada */
+      const ocupada = (fecha.getDate() * 7 + contador * 3 + indiceProf) % 5 === 0;
+      resultado.push({ hora: turnos[t][h], libre: !yaPaso && !ocupada, turno: t });
+      contador++;
+    }
+  }
+  return resultado;
+}
