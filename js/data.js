@@ -189,6 +189,18 @@ window.OGP.data = {
       duration: '5 meses',
       result: 'Masticación recuperada y sonrisa completa',
       beforeAfter: true, before: '', after: '', photo: ''
+    },
+    {
+      name: 'Natalia Henao',
+      specialtyId: 'ortodoncia',
+      rating: 5,
+      date: '2026-07-02',
+      text: 'Los brackets son muy cómodos y el seguimiento del doctor es excelente.',
+      story: 'Elegí brackets estéticos porque trabajo de cara al público. Los controles eran rápidos, el doctor siempre resolvía mis dudas y me avisaba qué esperar en cada etapa. Terminé unos meses antes de lo previsto y mi sonrisa quedó simétrica y armónica.',
+      treatment: 'Brackets estéticos',
+      duration: '18 meses',
+      result: 'Sonrisa simétrica y mordida estable',
+      beforeAfter: true, before: '', after: '', photo: ''
     }
   ],
 };
