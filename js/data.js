@@ -136,4 +136,23 @@ window.OGP.data = {
       image: ''
     }
   ],
+
+  /* Testimonios. "text" = frase corta (tarjetas del Inicio).
+     "story" + treatment/duration/result = historia completa (página Testimonios).
+     beforeAfter: true muestra dos espacios de imagen (antes / después); en before, after y photo
+     se escribe la ruta de la foto real (con consentimiento escrito del paciente). */
+  testimonials: [
+    {
+      name: 'María Fernanda López',
+      specialtyId: 'ortodoncia',
+      rating: 5,
+      date: '2026-09-12',
+      text: 'Me atendieron con mucha paciencia y hoy tengo la sonrisa que siempre quise.',
+      story: 'Durante años evité sonreír en las fotos porque mis dientes estaban muy apiñados. En la primera cita me explicaron todo el plan con imágenes y me dieron una fecha estimada de finalización. Cada control fue puntual y me sentí acompañada. Hoy sonrío sin pensarlo y mis amigas lo notaron desde el primer mes.',
+      treatment: 'Alineadores transparentes',
+      duration: '14 meses',
+      result: 'Apiñamiento corregido y mordida alineada',
+      beforeAfter: true, before: '', after: '', photo: ''
+    }
+  ],
 };
