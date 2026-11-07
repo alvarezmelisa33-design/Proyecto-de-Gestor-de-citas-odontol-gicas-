@@ -112,4 +112,37 @@
     { id: 'testimonios', label: 'Testimonios', href: 'testimonios.html' },
     { id: 'contacto', label: 'Contacto', href: 'contacto.html' }
   ];
+
+  function renderHeader() {
+    var mount = document.getElementById('site-header');
+    if (!mount) { return; }
+    var current = document.body.getAttribute('data-page');
+    var links = NAV.map(function (item) {
+      var active = item.id === current;
+      return '<li><a href="' + item.href + '"' + (active ? ' class="is-active" aria-current="page"' : '') + '>' +
+        esc(item.label) + '</a></li>';
+    }).join('');
+
+    mount.className = 'site-header';
+    mount.innerHTML =
+      '<div class="container header-inner">' +
+        '<a class="brand" href="index.html" aria-label="' + esc(D.clinic.name) + ' – ir al inicio">' +
+          '<span class="brand-mark">' + icon('tooth', 26) + '</span>' +
+          '<span class="brand-text"><strong>' + esc(D.clinic.name) + '</strong><small>' + esc(D.clinic.tagline) + '</small></span>' +
+        '</a>' +
+        '<button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">' +
+          icon('menu', 24) +
+        '</button>' +
+        '<nav class="main-nav" id="main-nav" aria-label="Menú principal"><ul>' + links + '</ul></nav>' +
+      '</div>';
+
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('main-nav');
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      toggle.innerHTML = icon(open ? 'close' : 'menu', 24);
+    });
+  }
 })();
