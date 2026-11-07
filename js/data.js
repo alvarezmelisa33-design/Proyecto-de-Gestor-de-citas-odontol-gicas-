@@ -165,6 +165,18 @@ window.OGP.data = {
       duration: '2 sesiones',
       result: 'Cero miedo en la consulta y molares protegidos',
       beforeAfter: false, before: '', after: '', photo: ''
+    },
+    {
+      name: 'Juliana Torres',
+      specialtyId: 'estetica',
+      rating: 4,
+      date: '2026-08-03',
+      text: 'El blanqueamiento quedó natural y sin sensibilidad. Muy profesionales.',
+      story: 'Quería aclarar mis dientes sin que se vieran artificiales. Me hicieron una limpieza previa, revisaron mi sensibilidad y me explicaron qué tono era realista para mí. El resultado quedó natural y casi no sentí molestia. Me llevé un kit para mantenerlo en casa y funciona muy bien.',
+      treatment: 'Blanqueamiento en consultorio',
+      duration: '1 sesión + kit de mantenimiento',
+      result: 'Varios tonos más claros, sin sensibilidad',
+      beforeAfter: true, before: '', after: '', photo: ''
     }
   ],
 };
