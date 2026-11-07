@@ -482,3 +482,5 @@ async function main() {
   console.log('\n¡Gracias por usar Oral Group Pro!');
   rl.close();
 }
+
+main();
