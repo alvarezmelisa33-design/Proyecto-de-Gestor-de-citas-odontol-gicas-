@@ -260,3 +260,15 @@ a { color: var(--lilac-dark); }
 .story-facts dd { margin: 2px 0 0; font-weight: 700; font-size: 0.92rem; }
 .story-facts .is-result dt { color: #CBD5E0; }
 .story-facts .is-result dd { color: var(--white); }
+
+/* 7. AGENDAMIENTO ------------------------------------------------------------ */
+.stepper { list-style: none; padding: 0; display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 0 32px; flex-wrap: wrap; }
+.step-item { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--gray-text); }
+.step-num {
+  width: 32px; height: 32px; border-radius: 50%; background: var(--gray-bg);
+  display: flex; align-items: center; justify-content: center; font-family: var(--font-title);
+}
+.step-item.is-active { color: var(--navy); }
+.step-item.is-active .step-num { background: var(--lilac); color: var(--white); }
+.step-item.is-done .step-num { background: var(--navy); color: var(--white); }
+.step-line { width: 40px; height: 2px; background: var(--pastel-line); }
