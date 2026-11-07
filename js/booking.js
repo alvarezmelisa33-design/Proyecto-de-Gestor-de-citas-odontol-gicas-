@@ -433,4 +433,23 @@
 
     $('appointment-form').addEventListener('submit', onSubmit);
   }
+
+  function onSubmit(e) {
+    e.preventDefault();
+    if (!state.time) { return; }
+
+    var firstInvalid = null;
+    Object.keys(FIELDS).forEach(function (key) {
+      if (!checkField(FIELDS[key]) && !firstInvalid) { firstInvalid = $(FIELDS[key].el); }
+    });
+    if (firstInvalid) { firstInvalid.focus(); return; }
+
+    var btn = $('submit-btn');
+    btn.disabled = true;
+    btn.classList.add('is-loading');
+    setTimeout(function () {
+      btn.classList.remove('is-loading');
+      showConfirmation();
+    }, 900);
+  }
 })();
