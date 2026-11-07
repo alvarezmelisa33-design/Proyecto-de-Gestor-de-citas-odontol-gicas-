@@ -33,6 +33,14 @@ window.OGP.data = {
       description: 'Corregimos la posición de los dientes y la mordida con brackets metálicos, estéticos o alineadores transparentes. Iniciamos con un estudio completo (fotos, radiografías y escáner) y un plan personalizado con controles periódicos.',
       treatments: ['Brackets metálicos y estéticos', 'Alineadores transparentes', 'Retenedores', 'Control y ajustes mensuales'],
       image: ''
+    },
+    {
+      id: 'estetica',
+      name: 'Estética y Blanqueamiento',
+      short: 'Recupera el tono y la armonía de tu sonrisa.',
+      description: 'Aclaramos el color de tus dientes de forma segura y diseñamos sonrisas armónicas. Incluye limpieza previa, valoración de sensibilidad y kit de mantenimiento para casa.',
+      treatments: ['Blanqueamiento en consultorio', 'Diseño de sonrisa', 'Carillas y resinas estéticas', 'Limpieza profiláctica'],
+      image: ''
     }
   ],
 };
