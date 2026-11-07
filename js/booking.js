@@ -373,4 +373,12 @@
     wrap.querySelector('.msg').textContent = message;
     input.setAttribute('aria-invalid', message ? 'true' : 'false');
   }
+
+  function checkField(field) {
+    var input = $(field.el);
+    var value = input.type === 'checkbox' ? '' : input.value;
+    var message = field.validate(value);
+    showResult(field, message);
+    return !message;
+  }
 })();
