@@ -215,4 +215,8 @@ window.OGP.data = {
       beforeAfter: false, before: '', after: '', photo: ''
     }
   ],
+
+  /* Los festivos de Colombia se calculan solos (ver booking.js). Aquí solo cierres extra de la clínica,
+     formato AAAA-MM-DD, por ejemplo una jornada de capacitación: ['2026-12-24'] */
+  closedDates: [],
 };
