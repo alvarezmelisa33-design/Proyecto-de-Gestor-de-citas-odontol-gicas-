@@ -193,3 +193,38 @@ function diaDisponible(indiceProf, fecha) {
   }
   return false;
 }
+
+/* ---------------------------------------------------------------------
+   CICLOS ANIDADOS #1: calendario del mes
+   Ciclo externo = semanas (filas), ciclo interno = días (columnas)
+   --------------------------------------------------------------------- */
+function mostrarCalendario(indiceProf, anio, mes) {
+  const primerDia = new Date(anio, mes, 1).getDay(); /* 0 = domingo */
+  const totalDias = new Date(anio, mes + 1, 0).getDate();
+
+  console.log('\n   ' + MESES[mes].toUpperCase() + ' ' + anio);
+  console.log('   ' + DIAS_SEMANA.map(function (d) { return d.padEnd(5); }).join(''));
+
+  for (let semana = 0; semana < 6; semana++) {
+    let fila = '   ';
+    for (let columna = 0; columna < 7; columna++) {
+      const dia = semana * 7 + columna - primerDia + 1;
+      if (dia < 1 || dia > totalDias) {
+        fila += '     ';
+      } else {
+        const hoy = new Date();
+        const fecha = new Date(anio, mes, dia);
+        const esPasado = fecha < new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+        if (!esPasado && diaDisponible(indiceProf, fecha)) {
+          fila += ('[' + dosDigitos(dia) + ']').padEnd(5);
+        } else {
+          fila += (' -- ').padEnd(5);
+        }
+      }
+    }
+    if (fila.trim() !== '') {
+      console.log(fila);
+    }
+  }
+  console.log('   [dd] = disponible    -- = no disponible\n');
+}
