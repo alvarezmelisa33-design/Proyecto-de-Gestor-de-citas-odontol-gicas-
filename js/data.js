@@ -24,4 +24,15 @@ window.OGP.data = {
     whatsappLink: 'https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Oral%20Group%20Pro',
     email: 'contacto@oralgrouppro.com'
   },
+
+  specialties: [
+    {
+      id: 'ortodoncia',
+      name: 'Ortodoncia',
+      short: 'Alineamos tus dientes con brackets y alineadores.',
+      description: 'Corregimos la posición de los dientes y la mordida con brackets metálicos, estéticos o alineadores transparentes. Iniciamos con un estudio completo (fotos, radiografías y escáner) y un plan personalizado con controles periódicos.',
+      treatments: ['Brackets metálicos y estéticos', 'Alineadores transparentes', 'Retenedores', 'Control y ajustes mensuales'],
+      image: ''
+    }
+  ],
 };
