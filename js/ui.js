@@ -77,4 +77,14 @@
     var h12 = h % 12 === 0 ? 12 : h % 12;
     return h12 + ':' + p[1] + ' ' + suffix;
   }
+
+  /* ---------- Marcador de imagen (icono de montaña) ----------
+     Si "src" viene vacío se muestra el marcador; si trae ruta, la imagen real. */
+  function mediaHTML(label, src) {
+    if (src) {
+      return '<img src="' + esc(src) + '" alt="' + esc(label) + '" loading="lazy">';
+    }
+    return '<div class="media-empty" role="img" aria-label="Espacio para imagen: ' + esc(label) + '">' +
+      icon('image', 44) + '<span>' + esc(label) + '</span></div>';
+  }
 })();
