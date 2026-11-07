@@ -148,3 +148,17 @@ a { color: var(--lilac-dark); }
 .btn-outline:hover { background: var(--pastel); color: var(--lilac-dark); }
 .btn-sm { padding: 9px 18px; font-size: 0.92rem; }
 .btn[disabled] { background: #CBD5E0; border-color: #CBD5E0; color: #718096; cursor: not-allowed; transform: none; }
+
+/* Contenedor de imagen: muestra la foto real o el icono de montaña */
+.media {
+  background: var(--pastel); border: 2px dashed var(--pastel-line); border-radius: var(--radius-sm);
+  overflow: hidden; aspect-ratio: 16 / 10; color: var(--lilac);
+}
+.media img { width: 100%; height: 100%; object-fit: cover; }
+.media-empty {
+  width: 100%; height: 100%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px; padding: 12px; text-align: center;
+}
+.media-empty span { font-size: 0.8rem; font-weight: 600; color: var(--gray-text); }
+.media-square { aspect-ratio: 1 / 1; }
+.media-hero { aspect-ratio: 3 / 2; border-radius: var(--radius); box-shadow: var(--shadow-lg); }
