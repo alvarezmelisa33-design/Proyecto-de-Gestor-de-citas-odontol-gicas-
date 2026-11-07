@@ -65,4 +65,14 @@
     if (consecutive) { return DAY_SHORT[days[0]] + ' – ' + DAY_SHORT[days[days.length - 1]]; }
     return days.map(function (d) { return DAY_SHORT[d]; }).join(' · ');
   }
+
+  /* El horario es lo que va después de la última coma de p.availability */
+  function availabilityHTML(p) {
+    var cut = p.availability.lastIndexOf(',');
+    var hours = cut === -1 ? '' : p.availability.slice(cut + 1).trim();
+    return '<div class="pro-avail">' +
+      '<p>' + U.icon('calendar', 16) + '<span>' + U.esc(daysShort(p.days)) + '</span></p>' +
+      (hours ? '<p>' + U.icon('clock', 16) + '<span>' + U.esc(hours) + '</span></p>' : '') +
+      '</div>';
+  }
 })();
