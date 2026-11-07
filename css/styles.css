@@ -231,3 +231,8 @@ a { color: var(--lilac-dark); }
 .stars .off { color: #CBD5E0; }
 .quote-meta { margin-top: auto; font-size: 0.9rem; color: var(--gray-text); }
 .quote-meta strong { color: var(--navy); display: block; }
+
+.cta-band { background: var(--navy); color: var(--white); border-radius: var(--radius); padding: 36px; text-align: center; }
+.cta-band h2 { color: var(--white); }
+.cta-band p { color: #CBD5E0; }
+.cta-spaced { margin-top: 40px; }
