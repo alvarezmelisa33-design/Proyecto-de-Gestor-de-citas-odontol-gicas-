@@ -41,4 +41,9 @@
     var day = ((h + l - 7 * m + 114) % 31) + 1;
     return new Date(year, month - 1, day);
   }
+
+  function nextMonday(date) {
+    var shift = (8 - date.getDay()) % 7; /* lunes se queda; otro día pasa al lunes siguiente */
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate() + shift);
+  }
 })();
