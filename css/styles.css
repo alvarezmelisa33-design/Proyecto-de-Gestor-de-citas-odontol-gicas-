@@ -65,3 +65,5 @@ p { margin: 0 0 12px; }
 ul { margin: 0; padding: 0; list-style: none; }
 img { max-width: 100%; display: block; }
 a { color: var(--lilac-dark); }
+
+:focus-visible { outline: 3px solid var(--lilac); outline-offset: 3px; }
