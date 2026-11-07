@@ -299,3 +299,10 @@ a { color: var(--lilac-dark); }
 .field-help { font-size: 0.8rem; color: var(--gray-text); margin-top: 4px; }
 .row-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 14px; }
 .counter { text-align: right; font-size: 0.8rem; color: var(--gray-text); margin-top: 4px; }
+
+.pro-mini { display: flex; gap: 14px; align-items: center; background: var(--pastel); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 20px; }
+.pro-mini .media { width: 84px; flex-shrink: 0; aspect-ratio: 1 / 1; }
+.pro-mini .media-empty span { display: none; }
+.pro-mini .media-empty .icon { width: 28px; height: 28px; }
+.pro-mini p { margin: 0; font-size: 0.88rem; }
+.pro-mini strong { display: block; font-size: 1rem; }
