@@ -183,4 +183,12 @@
     });
     box.innerHTML = html;
   }
+
+  function renderAssigned() {
+    var banner = $('assigned');
+    if (!state.time) { banner.classList.remove('is-visible'); return; }
+    $('assigned-text').innerHTML = '<strong>Horario asignado:</strong> ' + U.esc(U.formatLong(state.date, true)) +
+      ' a las ' + U.esc(U.formatTime(state.time)) + ' con ' + U.esc(currentPro().name) + '.';
+    banner.classList.add('is-visible');
+  }
 })();
