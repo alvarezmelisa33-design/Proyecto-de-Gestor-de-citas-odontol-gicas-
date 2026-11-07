@@ -12,4 +12,10 @@
   var $ = function (id) { return document.getElementById(id); };
 
   var state = { specialtyId: '', proId: '', date: null, time: '', view: null };
+
+  /* ======================================================================
+     Disponibilidad simulada
+     ====================================================================== */
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function ymd(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
 })();
