@@ -117,3 +117,12 @@ function soloCaracteres(texto, permitidos) {
   }
   return true;
 }
+
+function todosIguales(texto) {
+  for (let i = 1; i < texto.length; i++) {
+    if (texto.charAt(i) !== texto.charAt(0)) {
+      return false;
+    }
+  }
+  return true;
+}
