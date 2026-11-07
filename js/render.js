@@ -10,6 +10,7 @@
    ========================================================================== */
 (function () {
   'use strict';
+
   var D = window.OGP.data;
   var U = window.OGP.ui;
 
@@ -242,4 +243,17 @@
     'testimonials': testimonials,
     'stories': stories
   };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var mounts = document.querySelectorAll('[data-render]');
+    for (var i = 0; i < mounts.length; i++) {
+      var fn = RENDERERS[mounts[i].getAttribute('data-render')];
+      if (fn) { fn(mounts[i]); }
+    }
+    /* Si la URL trae #especialidad, desplazar tras renderizar */
+    if (location.hash) {
+      var target = document.getElementById(location.hash.slice(1));
+      if (target) { target.scrollIntoView(); }
+    }
+  });
 })();
