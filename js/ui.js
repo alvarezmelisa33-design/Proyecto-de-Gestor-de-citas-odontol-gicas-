@@ -6,6 +6,7 @@
    ========================================================================== */
 (function () {
   'use strict';
+
   var D = window.OGP.data;
 
   /* ---------- Iconos (SVG de trazo, 24x24) ---------- */
@@ -164,4 +165,11 @@
     parseISO: parseISO, formatLong: formatLong, formatTime: formatTime,
     mediaHTML: mediaHTML
   };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    renderHeader();
+    renderFooter();
+    fillStaticMedia();
+    fillIcons();
+  });
 })();
