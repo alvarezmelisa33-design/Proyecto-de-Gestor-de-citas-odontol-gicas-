@@ -429,3 +429,23 @@ a { color: var(--lilac-dark); }
 @media (max-width: 520px) {
   .slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+@media (max-width: 640px) {
+  .story { padding: 18px; }
+  .story-facts { grid-template-columns: minmax(0, 1fr); }
+  .rating-summary { padding: 16px; }
+  .section { padding: 40px 0; }
+  .hero { padding: 40px 0; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .specialty-item { grid-template-columns: 1fr; }
+  .row-2, .ticket-grid, .footer-inner { grid-template-columns: 1fr; }
+  .brand-text small { display: none; }
+  .panel { padding: 20px; }
+  .step-line { display: none; }
+  .stepper { gap: 14px; }
+  .cal-grid { gap: 4px; }
+  .cta-band { padding: 28px 20px; }
+  .chip { min-height: 40px; padding: 8px 14px; }
+  .btn-sm { min-height: 44px; }
+  .hero-actions .btn, .ticket-actions .btn { width: 100%; }
+}
