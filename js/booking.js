@@ -452,4 +452,32 @@
       showConfirmation();
     }, 900);
   }
+
+  /* ======================================================================
+     Paso 3: comprobante
+     ====================================================================== */
+  function showConfirmation() {
+    var spec = U.byId(D.specialties, state.specialtyId);
+    var pro = currentPro();
+    var doc = $('doc-number').value;
+    var maskedDoc = $('doc-type').value + ' ' + new Array(Math.max(doc.length - 3, 0) + 1).join('•') + doc.slice(-3);
+
+    $('t-code').textContent = 'ORAL-' + new Date().getFullYear() + '-' + String(Math.floor(1000 + Math.random() * 9000));
+    $('t-name').textContent = collapse($('full-name').value);
+    $('t-doc').textContent = maskedDoc;
+    $('t-phone').textContent = $('phone').value.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3');
+    $('t-schedule').textContent = U.formatLong(state.date, true) + ' · ' + U.formatTime(state.time);
+    $('t-specialty').textContent = spec.name;
+    $('t-pro').textContent = pro.name;
+    $('t-reason').textContent = collapse($('reason').value);
+    $('t-time').textContent = new Intl.DateTimeFormat('es-CO', { dateStyle: 'long', timeStyle: 'short' }).format(new Date());
+
+    $('booking-grid').hidden = true;
+    $('confirmation').classList.add('is-visible');
+    setStep(4); /* los 3 pasos quedan marcados como hechos */
+    $('step-3').classList.add('is-active');
+    $('step-3').classList.remove('is-done');
+    $('confirmation').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    $('confirmation-title').focus();
+  }
 })();
