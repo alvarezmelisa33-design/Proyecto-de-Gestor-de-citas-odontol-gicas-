@@ -19,3 +19,18 @@ const readline = require('readline');
 const rl = readline.createInterface({ input: process.stdin });
 const lineasPendientes = [];
 let quienEspera = null;
+
+rl.on('line', function (linea) {
+  if (quienEspera !== null) {
+    const entregar = quienEspera;
+    quienEspera = null;
+    entregar(linea);
+  } else {
+    lineasPendientes.push(linea);
+  }
+});
+rl.on('close', function () {
+  if (quienEspera !== null) {
+    quienEspera(null);
+  }
+});
