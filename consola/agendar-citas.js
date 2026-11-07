@@ -86,3 +86,6 @@ const TIPOS_DOC = ['CC - Cédula de ciudadanía', 'TI - Tarjeta de identidad', '
 const SIGLAS_DOC = ['CC', 'TI', 'CE', 'PA'];
 const DOC_MIN = [6, 10, 6, 6];
 const DOC_MAX = [10, 11, 7, 12];
+
+const LETRAS = 'abcdefghijklmnopqrstuvwxyzáéíóúüñABCDEFGHIJKLMNOPQRSTUVWXYZÁÉÍÓÚÜÑ';
+const DIGITOS = '0123456789';
