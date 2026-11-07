@@ -120,4 +120,13 @@
       });
     });
   }
+
+  /* ---------- Testimonios ---------- */
+  function stars(rating) {
+    var out = '';
+    for (var i = 1; i <= 5; i++) {
+      out += '<span class="' + (i <= rating ? '' : 'off') + '">' + U.icon('star', 18) + '</span>';
+    }
+    return '<div class="stars" role="img" aria-label="Calificación: ' + rating + ' de 5">' + out + '</div>';
+  }
 })();
