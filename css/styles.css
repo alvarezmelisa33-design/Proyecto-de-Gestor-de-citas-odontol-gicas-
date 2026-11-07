@@ -7,3 +7,28 @@
    4. Cabecera, menú y pie                      9. Contacto
    5. Botones y marcador de imagen             10. Responsive e impresión
    ========================================================================== */
+
+/* 1. TOKENS ---------------------------------------------------------------- */
+:root {
+  --navy: #1A365D;
+  --navy-soft: #2C4A7C;
+  --lilac: #805AD5;
+  --lilac-dark: #6B46C1;
+  --pastel: #EAF3FB;  /* azul clínico muy claro (antes lila pastel #F3E8FF) */
+  --pastel-line: #CFE0F1;
+  --white: #FFFFFF;
+  --gray-bg: #EDF2F7;
+  --gray-text: #5A6B80;
+  --error: #C53030;
+  --error-bg: #FFF5F5;
+
+  --font-title: "Albert Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow: 0 6px 24px rgba(26, 54, 93, 0.08);
+  --shadow-lg: 0 14px 40px rgba(26, 54, 93, 0.14);
+  --container: 1120px;
+  --gap: 24px;
+}
