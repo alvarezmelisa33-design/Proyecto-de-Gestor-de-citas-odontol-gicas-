@@ -8,3 +8,5 @@
    Cómo ejecutarlo (necesita Node.js):
        node consola/agendar-citas.js
    ===================================================================== */
+
+const readline = require('readline');
