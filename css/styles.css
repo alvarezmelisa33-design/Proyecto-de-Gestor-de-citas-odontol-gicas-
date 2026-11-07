@@ -67,3 +67,9 @@ img { max-width: 100%; display: block; }
 a { color: var(--lilac-dark); }
 
 :focus-visible { outline: 3px solid var(--lilac); outline-offset: 3px; }
+
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: var(--navy); color: var(--white); padding: 10px 16px; border-radius: 8px;
+}
+.skip-link:focus { top: 12px; }
