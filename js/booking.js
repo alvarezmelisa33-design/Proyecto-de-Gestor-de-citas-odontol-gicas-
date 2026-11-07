@@ -246,4 +246,41 @@
     resetSelection();
     renderCalendar();
   }
+
+  function bindSchedule() {
+    $('specialty').addEventListener('change', function (e) { onSpecialtyChange(e.target.value); });
+    $('professional').addEventListener('change', function (e) { onProfessionalChange(e.target.value); });
+
+    $('cal-prev').addEventListener('click', function () {
+      state.view = { y: state.view.m === 0 ? state.view.y - 1 : state.view.y, m: (state.view.m + 11) % 12 };
+      renderCalendar();
+    });
+    $('cal-next').addEventListener('click', function () {
+      state.view = { y: state.view.m === 11 ? state.view.y + 1 : state.view.y, m: (state.view.m + 1) % 12 };
+      renderCalendar();
+    });
+
+    $('cal-grid').addEventListener('click', function (e) {
+      var btn = e.target.closest('.cal-day');
+      if (!btn || btn.disabled) { return; }
+      state.date = U.parseISO(btn.getAttribute('data-date'));
+      state.time = '';
+      renderCalendar();
+      renderSlots();
+      renderAssigned();
+      setFormLocked(true);
+      setStep(1);
+    });
+
+    $('slots').addEventListener('click', function (e) {
+      var btn = e.target.closest('.slot');
+      if (!btn || btn.disabled) { return; }
+      state.time = btn.getAttribute('data-time');
+      renderSlots();
+      renderAssigned();
+      setFormLocked(false);
+      setStep(2);
+      $('full-name').focus({ preventScroll: window.innerWidth > 960 });
+    });
+  }
 })();
