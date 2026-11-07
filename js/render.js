@@ -18,4 +18,8 @@
     if (professionalId) { q += '&prof=' + encodeURIComponent(professionalId); }
     return 'agendamiento.html' + q;
   }
+
+  function professionalsOf(specialtyId) {
+    return D.professionals.filter(function (p) { return p.specialtyId === specialtyId; });
+  }
 })();
