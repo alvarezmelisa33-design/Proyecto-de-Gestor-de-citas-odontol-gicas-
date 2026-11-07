@@ -67,4 +67,24 @@
     return D.professionals.filter(function (p) { return p.specialtyId === specialtyId; });
   }
   function currentPro() { return U.byId(D.professionals, state.proId); }
+
+  /* Franjas de un día para un profesional: [{time, group, free}] */
+  function slotsFor(pro, date) {
+    if (!pro || pro.days.indexOf(date.getDay()) === -1) { return []; }
+    if (isHoliday(date)) { return []; }
+
+    var times = pro.morning.map(function (t) { return { time: t, group: 'morning' }; });
+    if (date.getDay() !== 6) {
+      times = times.concat(pro.afternoon.map(function (t) { return { time: t, group: 'afternoon' }; }));
+    }
+    var limit = new Date(Date.now() + 60 * 60 * 1000); /* mínimo 1 h de anticipación */
+
+    return times.map(function (s) {
+      var hm = s.time.split(':');
+      var at = new Date(date.getFullYear(), date.getMonth(), date.getDate(), Number(hm[0]), Number(hm[1]));
+      var taken = hash(pro.id + ymd(date) + s.time) % 5 === 0; /* ~20 % ocupadas */
+      s.free = at > limit && !taken;
+      return s;
+    });
+  }
 })();
