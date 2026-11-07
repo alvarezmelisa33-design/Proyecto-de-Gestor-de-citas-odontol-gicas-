@@ -215,4 +215,22 @@
       zigzag();
     });
   }
+
+  /* ---------- Contacto ---------- */
+  function contact(mount) {
+    var c = D.clinic;
+    var hours = c.schedule.map(function (row) {
+      return '<tr><td>' + U.esc(row[0]) + '</td><td>' + U.esc(row[1]) + '</td></tr>';
+    }).join('');
+    function item(iconName, title, inner) {
+      return '<div class="contact-item"><span class="shortcut-icon">' + U.icon(iconName, 24) + '</span>' +
+        '<div><h3>' + title + '</h3>' + inner + '</div></div>';
+    }
+    mount.innerHTML =
+      item('pin', 'Ubicación', '<p>' + U.esc(c.address) + '</p>') +
+      item('clock', 'Horario de atención', '<table class="hours"><tbody>' + hours + '</tbody></table>') +
+      item('phone', 'Teléfono', '<p><a href="' + U.esc(c.phoneLink) + '">' + U.esc(c.phone) + '</a></p>') +
+      item('chat', 'WhatsApp', '<p><a href="' + U.esc(c.whatsappLink) + '" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></p>') +
+      item('mail', 'Correo electrónico', '<p><a href="mailto:' + U.esc(c.email) + '">' + U.esc(c.email) + '</a></p>');
+  }
 })();
