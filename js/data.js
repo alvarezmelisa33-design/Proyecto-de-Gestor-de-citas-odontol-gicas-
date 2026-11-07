@@ -219,4 +219,12 @@ window.OGP.data = {
   /* Los festivos de Colombia se calculan solos (ver booking.js). Aquí solo cierres extra de la clínica,
      formato AAAA-MM-DD, por ejemplo una jornada de capacitación: ['2026-12-24'] */
   closedDates: [],
+
+  /* Reglas de documento de identidad (longitud y formato). Fáciles de editar. */
+  documentTypes: [
+    { id: 'CC', label: 'Cédula de ciudadanía', min: 6, max: 10, pattern: /^\d+$/, hint: 'Solo números, entre 6 y 10 dígitos.' },
+    { id: 'TI', label: 'Tarjeta de identidad', min: 10, max: 11, pattern: /^\d+$/, hint: 'Solo números, 10 u 11 dígitos.' },
+    { id: 'CE', label: 'Cédula de extranjería', min: 6, max: 7, pattern: /^\d+$/, hint: 'Solo números, 6 o 7 dígitos.' },
+    { id: 'PA', label: 'Pasaporte', min: 6, max: 12, pattern: /^[A-Za-z0-9]+$/, hint: 'Letras y números, entre 6 y 12 caracteres.' }
+  ]
 };
