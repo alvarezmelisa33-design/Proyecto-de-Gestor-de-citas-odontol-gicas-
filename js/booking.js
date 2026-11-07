@@ -191,4 +191,13 @@
       ' a las ' + U.esc(U.formatTime(state.time)) + ' con ' + U.esc(currentPro().name) + '.';
     banner.classList.add('is-visible');
   }
+
+  function setStep(n) {
+    for (var i = 1; i <= 3; i++) {
+      var item = $('step-' + i);
+      item.classList.toggle('is-active', i === n);
+      item.classList.toggle('is-done', i < n);
+      if (i === n) { item.setAttribute('aria-current', 'step'); } else { item.removeAttribute('aria-current'); }
+    }
+  }
 })();
