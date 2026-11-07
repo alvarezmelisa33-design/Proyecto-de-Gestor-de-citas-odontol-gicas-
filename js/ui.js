@@ -158,4 +158,10 @@
         '<p class="footer-note">© 2026 ' + esc(D.clinic.name) + ' · Proyecto integrador CESDE · Datos de ejemplo</p>' +
       '</div>';
   }
+
+  window.OGP.ui = {
+    icon: icon, esc: esc, byId: byId, capitalize: capitalize,
+    parseISO: parseISO, formatLong: formatLong, formatTime: formatTime,
+    mediaHTML: mediaHTML
+  };
 })();
