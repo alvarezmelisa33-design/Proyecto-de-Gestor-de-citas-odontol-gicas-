@@ -1,354 +1,200 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamiento | Oral Group Pro</title>
-    <meta name="description" content="Agenda tu cita odontológica en Oral Group Pro: elige especialidad, fecha y horario, y recibe tu confirmación al instante.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <header id="site-header" class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="index.html" aria-label="Oral Group Pro – ir al inicio">
-          <span class="brand-mark"></span>
-          <span class="brand-text">
-            <strong>Oral Group Pro</strong>
-            <small>Centro Odontológico &amp; Estética de Sonrisas</small>
-          </span>
-        </a>
-        <nav class="main-nav" id="main-nav" aria-label="Menú principal">
-          <ul>
-            <li>
-              <a href="index.html">Inicio</a>
-            </li>
-            <li>
-              <a href="especialidades.html">Especialidades</a>
-            </li>
-            <li>
-              <a href="equipo.html">Equipo Odontológico</a>
-            </li>
-            <li>
-              <a href="agendamiento.html" class="is-active" aria-current="page">Agendamiento</a>
-            </li>
-            <li>
-              <a href="testimonios.html">Testimonios</a>
-            </li>
-            <li>
-              <a href="contacto.html">Contacto</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="page-title">
-      <div class="container">
-        <h1>Agendamiento</h1>
-        <p>Solicita tu cita en tres pasos. Los datos y horarios son de ejemplo.</p>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamiento | Oral Group Pro</title>
+  <meta name="description" content="Agenda tu cita odontológica en Oral Group Pro: elige especialidad, fecha y horario, y recibe tu confirmación al instante.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/data.js"></script>
+  <script defer src="js/ui.js"></script>
+  <script defer src="js/booking.js"></script>
+</head>
+<body data-page="agendamiento">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div id="site-header"></div>
+
+  <div class="page-title">
+    <div class="container">
+      <h1>Agendamiento</h1>
+      <p>Solicita tu cita en tres pasos. Los datos y horarios son de ejemplo.</p>
     </div>
-    <main id="contenido" class="section">
-      <div class="container">
-        <ol class="stepper" aria-label="Progreso de la cita">
-          <li class="step-item is-active" id="step-1" aria-current="step">
-            <span class="step-num">1</span>
-            <span>Asignar horario</span>
-          </li>
-          <li class="step-line" aria-hidden="true"></li>
-          <li class="step-item" id="step-2">
-            <span class="step-num">2</span>
-            <span>Tus datos</span>
-          </li>
-          <li class="step-line" aria-hidden="true"></li>
-          <li class="step-item" id="step-3">
-            <span class="step-num">3</span>
-            <span>Confirmación</span>
-          </li>
-        </ol>
-        <div class="booking-grid" id="booking-grid">
-          <section class="panel" aria-labelledby="h-horario">
-            <div class="panel-head">
-              <span class="panel-icon"></span>
-              <div>
-                <h2 id="h-horario">1. Asigna tu horario</h2>
-                <p>Elige especialidad, día y hora para desbloquear el formulario.</p>
-              </div>
-            </div>
-            <div class="field">
-              <label for="specialty">
-                <span>Especialidad</span>
-                <span class="field-hint">Profesional a cargo</span>
-              </label>
-              <select id="specialty" class="select">
-                <option value="ortodoncia">Ortodoncia • Dr. Alejandro Valencia</option>
-                <option value="estetica">Estética y Blanqueamiento • Dra. Paula Ibañez</option>
-                <option value="rehabilitacion">Rehabilitación Oral • Dra. Lina Salazar</option>
-                <option value="odontopediatria">Odontopediatría • Dra. Natalia Carrillo</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="professional">
-                <span>Profesional</span>
-                <span class="field-hint">Disponibilidad propia</span>
-              </label>
-              <select id="professional" class="select">
-                <option value="valencia">Dr. Alejandro Valencia</option>
-                <option value="restrepo">Dra. Camila Restrepo</option>
-              </select>
-            </div>
-            <div class="pro-mini" id="pro-mini">
-              <div class="media">
-                <div class="media-empty" role="img" aria-label="Espacio para imagen: Dr. Alejandro Valencia">
-                  <span>Dr. Alejandro Valencia</span>
-                </div>
-              </div>
-              <div>
-                <strong>Dr. Alejandro Valencia</strong>
-                <p>Ortodoncista</p>
-                <p>Lunes a viernes, 8:30 a. m. – 6:00 p. m.</p>
-              </div>
-            </div>
-            <div class="cal-head">
-              <button type="button" class="cal-nav" id="cal-prev" aria-label="Mes anterior" disabled></button>
-              <h3 class="cal-title" id="cal-title" aria-live="polite">Noviembre de 2026</h3>
-              <button type="button" class="cal-nav" id="cal-next" aria-label="Mes siguiente"></button>
-            </div>
-            <div class="cal-grid" id="cal-grid">
-              <div class="cal-dow" aria-hidden="true">L</div>
-              <div class="cal-dow" aria-hidden="true">M</div>
-              <div class="cal-dow" aria-hidden="true">X</div>
-              <div class="cal-dow" aria-hidden="true">J</div>
-              <div class="cal-dow" aria-hidden="true">V</div>
-              <div class="cal-dow" aria-hidden="true">S</div>
-              <div class="cal-dow" aria-hidden="true">D</div>
-              <span class="cal-blank"></span>
-              <span class="cal-blank"></span>
-              <span class="cal-blank"></span>
-              <span class="cal-blank"></span>
-              <span class="cal-blank"></span>
-              <span class="cal-blank"></span>
-              <button type="button" class="cal-day" data-date="2026-11-01" disabled aria-pressed="false" aria-label="Domingo, 1 de noviembre de 2026, no disponible">1</button>
-              <button type="button" class="cal-day" data-date="2026-11-02" disabled aria-pressed="false" aria-label="Lunes, 2 de noviembre de 2026, no disponible">2</button>
-              <button type="button" class="cal-day" data-date="2026-11-03" disabled aria-pressed="false" aria-label="Martes, 3 de noviembre de 2026, no disponible">3</button>
-              <button type="button" class="cal-day" data-date="2026-11-04" disabled aria-pressed="false" aria-label="Miércoles, 4 de noviembre de 2026, no disponible">4</button>
-              <button type="button" class="cal-day" data-date="2026-11-05" disabled aria-pressed="false" aria-label="Jueves, 5 de noviembre de 2026, no disponible">5</button>
-              <button type="button" class="cal-day" data-date="2026-11-06" disabled aria-pressed="false" aria-label="Viernes, 6 de noviembre de 2026, no disponible">6</button>
-              <button type="button" class="cal-day is-today" data-date="2026-11-07" disabled aria-pressed="false" aria-label="Sábado, 7 de noviembre de 2026, no disponible">7</button>
-              <button type="button" class="cal-day" data-date="2026-11-08" disabled aria-pressed="false" aria-label="Domingo, 8 de noviembre de 2026, no disponible">8</button>
-              <button type="button" class="cal-day" data-date="2026-11-09" aria-pressed="false" aria-label="Lunes, 9 de noviembre de 2026, disponible">9</button>
-              <button type="button" class="cal-day" data-date="2026-11-10" aria-pressed="false" aria-label="Martes, 10 de noviembre de 2026, disponible">10</button>
-              <button type="button" class="cal-day" data-date="2026-11-11" aria-pressed="false" aria-label="Miércoles, 11 de noviembre de 2026, disponible">11</button>
-              <button type="button" class="cal-day" data-date="2026-11-12" aria-pressed="false" aria-label="Jueves, 12 de noviembre de 2026, disponible">12</button>
-              <button type="button" class="cal-day" data-date="2026-11-13" aria-pressed="false" aria-label="Viernes, 13 de noviembre de 2026, disponible">13</button>
-              <button type="button" class="cal-day" data-date="2026-11-14" disabled aria-pressed="false" aria-label="Sábado, 14 de noviembre de 2026, no disponible">14</button>
-              <button type="button" class="cal-day" data-date="2026-11-15" disabled aria-pressed="false" aria-label="Domingo, 15 de noviembre de 2026, no disponible">15</button>
-              <button type="button" class="cal-day" data-date="2026-11-16" disabled aria-pressed="false" aria-label="Lunes, 16 de noviembre de 2026, no disponible">16</button>
-              <button type="button" class="cal-day" data-date="2026-11-17" aria-pressed="false" aria-label="Martes, 17 de noviembre de 2026, disponible">17</button>
-              <button type="button" class="cal-day" data-date="2026-11-18" aria-pressed="false" aria-label="Miércoles, 18 de noviembre de 2026, disponible">18</button>
-              <button type="button" class="cal-day" data-date="2026-11-19" aria-pressed="false" aria-label="Jueves, 19 de noviembre de 2026, disponible">19</button>
-              <button type="button" class="cal-day" data-date="2026-11-20" aria-pressed="false" aria-label="Viernes, 20 de noviembre de 2026, disponible">20</button>
-              <button type="button" class="cal-day" data-date="2026-11-21" disabled aria-pressed="false" aria-label="Sábado, 21 de noviembre de 2026, no disponible">21</button>
-              <button type="button" class="cal-day" data-date="2026-11-22" disabled aria-pressed="false" aria-label="Domingo, 22 de noviembre de 2026, no disponible">22</button>
-              <button type="button" class="cal-day" data-date="2026-11-23" aria-pressed="false" aria-label="Lunes, 23 de noviembre de 2026, disponible">23</button>
-              <button type="button" class="cal-day" data-date="2026-11-24" aria-pressed="false" aria-label="Martes, 24 de noviembre de 2026, disponible">24</button>
-              <button type="button" class="cal-day" data-date="2026-11-25" aria-pressed="false" aria-label="Miércoles, 25 de noviembre de 2026, disponible">25</button>
-              <button type="button" class="cal-day" data-date="2026-11-26" aria-pressed="false" aria-label="Jueves, 26 de noviembre de 2026, disponible">26</button>
-              <button type="button" class="cal-day" data-date="2026-11-27" aria-pressed="false" aria-label="Viernes, 27 de noviembre de 2026, disponible">27</button>
-              <button type="button" class="cal-day" data-date="2026-11-28" disabled aria-pressed="false" aria-label="Sábado, 28 de noviembre de 2026, no disponible">28</button>
-              <button type="button" class="cal-day" data-date="2026-11-29" disabled aria-pressed="false" aria-label="Domingo, 29 de noviembre de 2026, no disponible">29</button>
-              <button type="button" class="cal-day" data-date="2026-11-30" aria-pressed="false" aria-label="Lunes, 30 de noviembre de 2026, disponible">30</button>
-            </div>
-            <div class="cal-legend" aria-hidden="true">
-              <span>
-                <i class="dot dot-free"></i>
-                Disponible
-              </span>
-              <span>
-                <i class="dot dot-busy"></i>
-                No disponible
-              </span>
-              <span>
-                <i class="dot dot-sel"></i>
-                Seleccionado
-              </span>
-            </div>
-            <div id="slots" aria-live="polite">
-              <p class="slots-empty">Elige un día disponible en el calendario para ver los horarios.</p>
-            </div>
-            <div class="assigned" id="assigned" role="status">
-              <span></span>
-              <p id="assigned-text"></p>
-            </div>
-          </section>
-          <section class="panel" id="form-panel" aria-labelledby="h-datos">
-            <div class="panel-head">
-              <span class="panel-icon"></span>
-              <div>
-                <h2 id="h-datos">2. Tus datos</h2>
-                <p>Todos los campos son obligatorios.</p>
-              </div>
-            </div>
-            <form id="appointment-form" novalidate autocomplete="on">
-              <div class="row-2">
-                <div class="field">
-                  <label for="doc-type">Tipo de documento</label>
-                  <select id="doc-type" class="select">
-                    <option value="CC">Cédula de ciudadanía</option>
-                    <option value="TI">Tarjeta de identidad</option>
-                    <option value="CE">Cédula de extranjería</option>
-                    <option value="PA">Pasaporte</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="doc-number">
-                    <span>Número de documento</span>
-                  </label>
-                  <input id="doc-number" class="input" type="text" inputmode="numeric" autocomplete="off" maxlength="10" aria-describedby="doc-help err-doc" aria-invalid="false" required>
-                  <p class="field-help" id="doc-help">Solo números, entre 6 y 10 dígitos.</p>
-                  <p class="field-error" id="err-doc" role="alert">
-                    <span class="msg"></span>
-                  </p>
-                </div>
-              </div>
-              <div class="field">
-                <label for="full-name">
-                  <span>Nombre completo</span>
-                  <span class="field-hint">Nombre y apellido</span>
-                </label>
-                <input id="full-name" class="input" type="text" autocomplete="name" maxlength="60" placeholder="Ej. Valentina Morales Gómez" aria-describedby="err-name" aria-invalid="false" required>
-                <p class="field-error" id="err-name" role="alert">
-                  <span class="msg"></span>
-                </p>
-              </div>
-              <div class="field">
-                <label for="phone">
-                  <span>Celular</span>
-                  <span class="field-hint">10 dígitos</span>
-                </label>
-                <input id="phone" class="input" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="Ej. 312 456 7890" maxlength="13" aria-describedby="err-phone" aria-invalid="false" required>
-                <p class="field-error" id="err-phone" role="alert">
-                  <span class="msg"></span>
-                </p>
-              </div>
-              <div class="field">
-                <label for="reason">
-                  <span>Motivo de consulta</span>
-                  <span class="field-hint">Cuéntanos qué necesitas</span>
-                </label>
-                <p class="quick-label">Sugerencias rápidas:</p>
-                <div class="chips" id="reason-chips">
-                  <button type="button" class="chip" data-reason="Valoración y tratamiento de ortodoncia">Ortodoncia</button>
-                  <button type="button" class="chip" data-reason="Rehabilitación oral y prótesis dental">Rehabilitación</button>
-                  <button type="button" class="chip" data-reason="Atención y cuidado odontopediátrico">Odontopediatría</button>
-                  <button type="button" class="chip" data-reason="Blanqueamiento y estética dental">Estética</button>
-                  <button type="button" class="chip" data-reason="Limpieza profunda y chequeo de rutina">Limpieza</button>
-                  <button type="button" class="chip" data-reason="Molestia, dolor o sensibilidad dental">Dolor o sensibilidad</button>
-                </div>
-                <textarea id="reason" class="textarea" rows="3" maxlength="250" placeholder="Describe el motivo de tu visita…" aria-describedby="err-reason" aria-invalid="false" required></textarea>
-                <p class="counter" id="reason-counter">0 / 250</p>
-                <p class="field-error" id="err-reason" role="alert">
-                  <span class="msg"></span>
-                </p>
-              </div>
-              <div class="field">
-                <label class="consent" for="consent">
-                  <input id="consent" type="checkbox" aria-describedby="err-consent" aria-invalid="false" required>
-                  <span>Autorizo el tratamiento de mis datos personales para gestionar mi cita (Ley 1581 de 2012).</span>
-                </label>
-                <p class="field-error" id="err-consent" role="alert">
-                  <span class="msg"></span>
-                </p>
-              </div>
-              <button type="submit" class="btn submit" id="submit-btn">
-                <span class="spinner" aria-hidden="true"></span>
-                <span class="btn-label">Confirmar y reservar cita</span>
-              </button>
-              <p class="note">
-                <span></span>
-                Tus datos se tratan con confidencialidad. No se guardan en este prototipo.
-              </p>
-            </form>
-          </section>
-        </div>
-        <section class="confirmation" id="confirmation" aria-labelledby="confirmation-title">
-          <div class="ticket">
-            <div class="ticket-hero">
-              <div class="ok"></div>
-              <h2 id="confirmation-title" tabindex="-1">¡Tu cita está confirmada!</h2>
-              <p>Nos alegra recibirte. Guarda tu comprobante y preséntate 10 minutos antes.</p>
-            </div>
-            <div class="ticket-strip">
-              <div>
-                <small>Código de cita</small>
-                <strong id="t-code">ORAL-0000-0000</strong>
-              </div>
-              <span class="ticket-status">Cita agendada</span>
-            </div>
-            <div class="ticket-grid">
-              <div class="ticket-item">
-                <span class="ticket-label">Paciente</span>
-                <div class="ticket-value" id="t-name"></div>
-              </div>
-              <div class="ticket-item">
-                <span class="ticket-label">Documento</span>
-                <div class="ticket-value" id="t-doc"></div>
-              </div>
-              <div class="ticket-item">
-                <span class="ticket-label">Celular</span>
-                <div class="ticket-value" id="t-phone"></div>
-              </div>
-              <div class="ticket-item">
-                <span class="ticket-label">Especialidad</span>
-                <div class="ticket-value" id="t-specialty"></div>
-              </div>
-              <div class="ticket-item wide">
-                <span class="ticket-label">Fecha y hora</span>
-                <div class="ticket-value" id="t-schedule"></div>
-              </div>
-              <div class="ticket-item wide">
-                <span class="ticket-label">Profesional</span>
-                <div class="ticket-value" id="t-pro"></div>
-              </div>
-              <div class="ticket-item wide">
-                <span class="ticket-label">Motivo de consulta</span>
-                <div class="ticket-value" id="t-reason"></div>
-              </div>
-              <div class="ticket-item wide">
-                <span class="ticket-label">Registrado el</span>
-                <div class="ticket-value" id="t-time"></div>
-              </div>
-            </div>
-            <div class="ticket-note">
-              <span></span>
-              <p>
-                <strong>Nota para tu visita:</strong>
-                si necesitas reagendar, avísanos con al menos 4 horas de anticipación.
-              </p>
-            </div>
-            <div class="ticket-actions">
-              <button type="button" class="btn btn-outline" id="btn-print">Imprimir comprobante</button>
-              <button type="button" class="btn" id="btn-new">Agendar otra cita</button>
+  </div>
+
+  <main id="contenido" class="section">
+    <div class="container">
+
+      <!-- Progreso -->
+      <ol class="stepper" aria-label="Progreso de la cita">
+        <li class="step-item is-active" id="step-1"><span class="step-num">1</span><span>Asignar horario</span></li>
+        <li class="step-line" aria-hidden="true"></li>
+        <li class="step-item" id="step-2"><span class="step-num">2</span><span>Tus datos</span></li>
+        <li class="step-line" aria-hidden="true"></li>
+        <li class="step-item" id="step-3"><span class="step-num">3</span><span>Confirmación</span></li>
+      </ol>
+
+      <div class="booking-grid" id="booking-grid">
+
+        <!-- PASO 1: especialidad, fecha y horario -->
+        <section class="panel" aria-labelledby="h-horario">
+          <div class="panel-head">
+            <span class="panel-icon" data-icon="calendar" data-size="24"></span>
+            <div>
+              <h2 id="h-horario">1. Asigna tu horario</h2>
+              <p>Elige especialidad, día y hora para desbloquear el formulario.</p>
             </div>
           </div>
+
+          <div class="field">
+            <label for="specialty"><span>Especialidad</span><span class="field-hint">Profesional a cargo</span></label>
+            <select id="specialty" class="select"></select>
+          </div>
+
+          <div class="field">
+            <label for="professional"><span>Profesional</span><span class="field-hint">Disponibilidad propia</span></label>
+            <select id="professional" class="select"></select>
+          </div>
+
+          <div class="pro-mini" id="pro-mini"></div>
+
+          <div class="cal-head">
+            <button type="button" class="cal-nav" id="cal-prev" aria-label="Mes anterior" data-icon="left" data-size="18"></button>
+            <h3 class="cal-title" id="cal-title" aria-live="polite"></h3>
+            <button type="button" class="cal-nav" id="cal-next" aria-label="Mes siguiente" data-icon="right" data-size="18"></button>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+          <div class="cal-legend" aria-hidden="true">
+            <span><i class="dot dot-free"></i> Disponible</span>
+            <span><i class="dot dot-busy"></i> No disponible</span>
+            <span><i class="dot dot-sel"></i> Seleccionado</span>
+          </div>
+
+          <div id="slots" aria-live="polite"></div>
+
+          <div class="assigned" id="assigned" role="status">
+            <span data-icon="check" data-size="22"></span>
+            <p id="assigned-text"></p>
+          </div>
+        </section>
+
+        <!-- PASO 2: formulario (bloqueado hasta elegir horario) -->
+        <section class="panel" id="form-panel" aria-labelledby="h-datos">
+          <div class="form-lock" id="form-lock">
+            <span class="lock-badge" data-icon="lock" data-size="28"></span>
+            <h3>¡Un pasito previo!</h3>
+            <p>Elige un día y una hora en el panel de horarios para habilitar este formulario.</p>
+          </div>
+
+          <div class="panel-head">
+            <span class="panel-icon" data-icon="note" data-size="24"></span>
+            <div>
+              <h2 id="h-datos">2. Tus datos</h2>
+              <p>Todos los campos son obligatorios.</p>
+            </div>
+          </div>
+
+          <form id="appointment-form" novalidate autocomplete="on">
+            <div class="row-2">
+              <div class="field">
+                <label for="doc-type">Tipo de documento</label>
+                <select id="doc-type" class="select"></select>
+              </div>
+              <div class="field">
+                <label for="doc-number"><span>Número de documento</span></label>
+                <input id="doc-number" class="input" type="text" inputmode="numeric" autocomplete="off"
+                  maxlength="10" aria-describedby="doc-help err-doc" aria-invalid="false" required>
+                <p class="field-help" id="doc-help"></p>
+                <p class="field-error" id="err-doc" role="alert"><span class="msg"></span></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="full-name"><span>Nombre completo</span><span class="field-hint">Nombre y apellido</span></label>
+              <input id="full-name" class="input" type="text" autocomplete="name" maxlength="60"
+                placeholder="Ej. Valentina Morales Gómez" aria-describedby="err-name" aria-invalid="false" required>
+              <p class="field-error" id="err-name" role="alert"><span class="msg"></span></p>
+            </div>
+
+            <div class="field">
+              <label for="phone"><span>Celular</span><span class="field-hint">10 dígitos</span></label>
+              <input id="phone" class="input" type="tel" inputmode="numeric" autocomplete="tel-national"
+                placeholder="Ej. 312 456 7890" maxlength="13" aria-describedby="err-phone" aria-invalid="false" required>
+              <p class="field-error" id="err-phone" role="alert"><span class="msg"></span></p>
+            </div>
+
+            <div class="field">
+              <label for="reason"><span>Motivo de consulta</span><span class="field-hint">Cuéntanos qué necesitas</span></label>
+              <p class="quick-label">Sugerencias rápidas:</p>
+              <div class="chips" id="reason-chips">
+                <button type="button" class="chip" data-reason="Valoración y tratamiento de ortodoncia">Ortodoncia</button>
+                <button type="button" class="chip" data-reason="Rehabilitación oral y prótesis dental">Rehabilitación</button>
+                <button type="button" class="chip" data-reason="Atención y cuidado odontopediátrico">Odontopediatría</button>
+                <button type="button" class="chip" data-reason="Blanqueamiento y estética dental">Estética</button>
+                <button type="button" class="chip" data-reason="Limpieza profunda y chequeo de rutina">Limpieza</button>
+                <button type="button" class="chip" data-reason="Molestia, dolor o sensibilidad dental">Dolor o sensibilidad</button>
+              </div>
+              <textarea id="reason" class="textarea" rows="3" maxlength="250"
+                placeholder="Describe el motivo de tu visita…" aria-describedby="err-reason" aria-invalid="false" required></textarea>
+              <p class="counter" id="reason-counter">0 / 250</p>
+              <p class="field-error" id="err-reason" role="alert"><span class="msg"></span></p>
+            </div>
+
+            <div class="field">
+              <label class="consent" for="consent">
+                <input id="consent" type="checkbox" aria-describedby="err-consent" aria-invalid="false" required>
+                <span>Autorizo el tratamiento de mis datos personales para gestionar mi cita (Ley 1581 de 2012).</span>
+              </label>
+              <p class="field-error" id="err-consent" role="alert"><span class="msg"></span></p>
+            </div>
+
+            <button type="submit" class="btn submit" id="submit-btn">
+              <span class="spinner" aria-hidden="true"></span>
+              <span class="btn-label">Confirmar y reservar cita</span>
+            </button>
+            <p class="note"><span data-icon="shield" data-size="16"></span> Tus datos se tratan con confidencialidad. No se guardan en este prototipo.</p>
+          </form>
         </section>
       </div>
-    </main>
-    <footer id="site-footer" class="site-footer">
-      <div class="container footer-inner">
-        <div>
-          <strong>Oral Group Pro</strong>
-          <p>Centro Odontológico &amp; Estética de Sonrisas</p>
+
+      <!-- PASO 3: comprobante -->
+      <section class="confirmation" id="confirmation" aria-labelledby="confirmation-title">
+        <div class="ticket">
+          <div class="ticket-hero">
+            <div class="ok" data-icon="check" data-size="40"></div>
+            <h2 id="confirmation-title" tabindex="-1">¡Tu cita está confirmada!</h2>
+            <p>Nos alegra recibirte. Guarda tu comprobante y preséntate 10 minutos antes.</p>
+          </div>
+          <div class="ticket-strip">
+            <div><small>Código de cita</small><strong id="t-code">ORAL-0000-0000</strong></div>
+            <span class="ticket-status">Cita agendada</span>
+          </div>
+          <div class="ticket-grid">
+            <div class="ticket-item"><span class="ticket-label">Paciente</span><div class="ticket-value" id="t-name"></div></div>
+            <div class="ticket-item"><span class="ticket-label">Documento</span><div class="ticket-value" id="t-doc"></div></div>
+            <div class="ticket-item"><span class="ticket-label">Celular</span><div class="ticket-value" id="t-phone"></div></div>
+            <div class="ticket-item"><span class="ticket-label">Especialidad</span><div class="ticket-value" id="t-specialty"></div></div>
+            <div class="ticket-item wide"><span class="ticket-label">Fecha y hora</span><div class="ticket-value" id="t-schedule"></div></div>
+            <div class="ticket-item wide"><span class="ticket-label">Profesional</span><div class="ticket-value" id="t-pro"></div></div>
+            <div class="ticket-item wide"><span class="ticket-label">Motivo de consulta</span><div class="ticket-value" id="t-reason"></div></div>
+            <div class="ticket-item wide"><span class="ticket-label">Registrado el</span><div class="ticket-value" id="t-time"></div></div>
+          </div>
+          <div class="ticket-note">
+            <span data-icon="heart" data-size="22"></span>
+            <p><strong>Nota para tu visita:</strong> si necesitas reagendar, avísanos con al menos 4 horas de anticipación.</p>
+          </div>
+          <div class="ticket-actions">
+            <button type="button" class="btn btn-outline" id="btn-print">Imprimir comprobante</button>
+            <button type="button" class="btn" id="btn-new">Agendar otra cita</button>
+          </div>
         </div>
-        <div>
-          <p>Carrera 43A # 10-25, Medellín, Antioquia</p>
-          <p>(604) 555 01 23</p>
-        </div>
-        <p class="footer-note">© 2026 Oral Group Pro · Proyecto integrador CESDE · Datos de ejemplo</p>
-      </div>
-    </footer>
-  </body>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
 </html>
