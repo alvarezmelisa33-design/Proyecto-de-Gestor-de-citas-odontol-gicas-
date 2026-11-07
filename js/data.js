@@ -49,6 +49,14 @@ window.OGP.data = {
       description: 'Restauramos la capacidad de masticar y sonreír con coronas, puentes, prótesis e implantes, buscando resultados naturales y duraderos, con un plan por etapas claro y transparente.',
       treatments: ['Coronas y puentes', 'Prótesis removibles y fijas', 'Implantes dentales', 'Rehabilitación de la mordida'],
       image: ''
+    },
+    {
+      id: 'odontopediatria',
+      name: 'Odontopediatría',
+      short: 'Atención amable para los más pequeños.',
+      description: 'Cuidamos la salud oral de bebés, niños y adolescentes en un ambiente tranquilo y didáctico. Prevención, sellantes, fluorización y seguimiento del crecimiento, siempre con paciencia y cariño.',
+      treatments: ['Primera visita del bebé', 'Sellantes y fluorización', 'Control del crecimiento dental', 'Manejo de la ansiedad dental'],
+      image: ''
     }
   ],
 };
