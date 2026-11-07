@@ -110,6 +110,18 @@ window.OGP.data = {
       morning: ['08:30', '09:15', '10:00', '11:30'],
       afternoon: ['14:00', '15:15', '16:30', '17:45'],
       image: ''
+    },
+    {
+      id: 'restrepo',
+      name: 'Dra. Camila Restrepo',
+      role: 'Ortodoncista',
+      specialtyId: 'ortodoncia',
+      bio: 'Ortodoncista con enfoque en niños y adolescentes. Acompaña a las familias con un trato cercano y planes de tratamiento claros desde la primera cita.',
+      availability: 'Lunes, miércoles y viernes, 8:30 a. m. – 6:00 p. m.',
+      days: [1, 3, 5],
+      morning: ['08:30', '09:15', '10:00', '11:30'],
+      afternoon: ['14:00', '15:15', '16:30', '17:45'],
+      image: ''
     }
   ],
 };
