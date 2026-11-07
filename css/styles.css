@@ -114,3 +114,12 @@ a { color: var(--lilac-dark); }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-text strong { font-family: var(--font-title); font-size: 1.2rem; }
 .brand-text small { font-size: 0.72rem; color: #CBD5E0; }
+
+.main-nav ul { display: flex; gap: 4px; }
+.main-nav a {
+  white-space: nowrap;
+  display: block; padding: 10px 14px; border-radius: 10px;
+  color: var(--white); text-decoration: none; font-weight: 600; font-size: 0.95rem;
+}
+.main-nav a:hover { background: var(--navy-soft); }
+.main-nav a.is-active { background: var(--lilac); }
