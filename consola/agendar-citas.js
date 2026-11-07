@@ -262,3 +262,37 @@ function mostrarSemana(indiceProf) {
   }
   console.log('');
 }
+
+/* ---------------------------------------------------------------------
+   PEDIR Y VALIDAR LOS DATOS DEL PACIENTE (ciclos while)
+   --------------------------------------------------------------------- */
+async function pedirDocumento() {
+  console.log('\n  Tipo de documento:');
+  for (let i = 0; i < TIPOS_DOC.length; i++) {
+    console.log('    ' + (i + 1) + '. ' + TIPOS_DOC[i]);
+  }
+  const tipo = (await leerEntero('  Elige el tipo: ', 1, TIPOS_DOC.length)) - 1;
+
+  while (true) {
+    let numero = await leer('  Número de documento: ');
+    if (SIGLAS_DOC[tipo] === 'PA') {
+      numero = numero.toUpperCase();
+      if (!soloCaracteres(numero, DIGITOS + LETRAS.slice(0, 26).toUpperCase())) {
+        console.log('  ✗ El pasaporte solo lleva letras (sin tildes) y números.');
+        continue;
+      }
+    } else if (!soloCaracteres(numero, DIGITOS) || numero === '') {
+      console.log('  ✗ Solo se permiten números, sin puntos ni espacios.');
+      continue;
+    }
+    if (numero.length < DOC_MIN[tipo] || numero.length > DOC_MAX[tipo]) {
+      console.log('  ✗ El ' + SIGLAS_DOC[tipo] + ' debe tener entre ' + DOC_MIN[tipo] + ' y ' + DOC_MAX[tipo] + ' caracteres (escribiste ' + numero.length + ').');
+      continue;
+    }
+    if (SIGLAS_DOC[tipo] !== 'PA' && (numero.charAt(0) === '0' || todosIguales(numero))) {
+      console.log('  ✗ Revisa el número: no parece un documento válido.');
+      continue;
+    }
+    return { tipo: SIGLAS_DOC[tipo], numero: numero };
+  }
+}
