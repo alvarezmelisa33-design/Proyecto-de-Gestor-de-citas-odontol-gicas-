@@ -80,3 +80,9 @@ const FESTIVOS = [
   '2027-05-10', '2027-05-31', '2027-06-07', '2027-07-05', '2027-07-20', '2027-08-07',
   '2027-08-16', '2027-10-18', '2027-11-01', '2027-11-15', '2027-12-08', '2027-12-25'
 ];
+
+/* Tipos de documento y su longitud permitida (misma regla que la página) */
+const TIPOS_DOC = ['CC - Cédula de ciudadanía', 'TI - Tarjeta de identidad', 'CE - Cédula de extranjería', 'PA - Pasaporte'];
+const SIGLAS_DOC = ['CC', 'TI', 'CE', 'PA'];
+const DOC_MIN = [6, 10, 6, 6];
+const DOC_MAX = [10, 11, 7, 12];
