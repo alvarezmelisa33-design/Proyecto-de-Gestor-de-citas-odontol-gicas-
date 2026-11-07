@@ -102,4 +102,11 @@
     }).join('');
     $('specialty').value = state.specialtyId;
   }
+
+  function renderProfessionalSelect() {
+    $('professional').innerHTML = professionalsOf(state.specialtyId).map(function (p) {
+      return '<option value="' + U.esc(p.id) + '">' + U.esc(p.name) + '</option>';
+    }).join('');
+    $('professional').value = state.proId;
+  }
 })();
