@@ -91,4 +91,15 @@
   function dayHasFree(pro, date) {
     return slotsFor(pro, date).some(function (s) { return s.free; });
   }
+
+  /* ======================================================================
+     Paso 1: especialidad, calendario y horarios
+     ====================================================================== */
+  function renderSpecialtySelect() {
+    $('specialty').innerHTML = D.specialties.map(function (s) {
+      var pro = professionalsOf(s.id)[0];
+      return '<option value="' + U.esc(s.id) + '">' + U.esc(s.name) + (pro ? ' • ' + U.esc(pro.name) : '') + '</option>';
+    }).join('');
+    $('specialty').value = state.specialtyId;
+  }
 })();
