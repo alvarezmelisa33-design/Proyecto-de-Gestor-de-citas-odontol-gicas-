@@ -18,4 +18,10 @@
      ====================================================================== */
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function ymd(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+
+  function hash(text) {
+    var h = 0;
+    for (var i = 0; i < text.length; i++) { h = (h * 31 + text.charCodeAt(i)) % 100003; }
+    return h;
+  }
 })();
