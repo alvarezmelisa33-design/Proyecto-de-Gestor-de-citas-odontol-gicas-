@@ -87,4 +87,11 @@
     return '<div class="media-empty" role="img" aria-label="Espacio para imagen: ' + esc(label) + '">' +
       icon('image', 44) + '<span>' + esc(label) + '</span></div>';
   }
+
+  function fillStaticMedia() {
+    var nodes = document.querySelectorAll('[data-media]');
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].innerHTML = mediaHTML(nodes[i].getAttribute('data-media'), nodes[i].getAttribute('data-src') || '');
+    }
+  }
 })();
