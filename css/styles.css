@@ -105,3 +105,12 @@ a { color: var(--lilac-dark); }
 /* 4. CABECERA, MENÚ Y PIE ---------------------------------------------------- */
 .site-header { background: var(--navy); position: sticky; top: 0; z-index: 50; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; }
+
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); }
+.brand-mark {
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 14px; background: var(--lilac); color: var(--white);
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+.brand-text strong { font-family: var(--font-title); font-size: 1.2rem; }
+.brand-text small { font-size: 0.72rem; color: #CBD5E0; }
