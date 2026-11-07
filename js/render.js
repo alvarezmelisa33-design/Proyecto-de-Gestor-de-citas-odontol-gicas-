@@ -143,4 +143,15 @@
         '</article>';
     }).join('');
   }
+
+  /* ---------- Testimonios: historias completas (página Testimonios) ---------- */
+  function storyVisual(t) {
+    if (!t.beforeAfter) {
+      return '<div class="media story-photo">' + U.mediaHTML('Foto de ' + t.name, t.photo) + '</div>';
+    }
+    return '<div class="ba">' +
+      '<figure><div class="media">' + U.mediaHTML('Antes · ' + t.name, t.before) + '</div><figcaption>Antes</figcaption></figure>' +
+      '<figure><div class="media">' + U.mediaHTML('Después · ' + t.name, t.after) + '</div><figcaption class="is-after">Después</figcaption></figure>' +
+      '</div>';
+  }
 })();
