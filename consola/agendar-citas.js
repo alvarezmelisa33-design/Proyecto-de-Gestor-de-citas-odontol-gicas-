@@ -10,3 +10,12 @@
    ===================================================================== */
 
 const readline = require('readline');
+
+/* ---------------------------------------------------------------------
+   "SCANNER": lee lo que el usuario escribe en la consola.
+   En Java sería  Scanner sc = new Scanner(System.in);  sc.nextLine();
+   Aquí leer("pregunta") hace lo mismo, y "await" espera la respuesta.
+   --------------------------------------------------------------------- */
+const rl = readline.createInterface({ input: process.stdin });
+const lineasPendientes = [];
+let quienEspera = null;
