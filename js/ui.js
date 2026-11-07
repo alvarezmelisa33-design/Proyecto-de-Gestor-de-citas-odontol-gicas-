@@ -62,4 +62,10 @@
     var p = iso.split('-');
     return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
   }
+
+  function formatLong(date, withWeekday) {
+    var opts = { day: 'numeric', month: 'long', year: 'numeric' };
+    if (withWeekday) { opts.weekday = 'long'; }
+    return capitalize(new Intl.DateTimeFormat('es-CO', opts).format(date));
+  }
 })();
