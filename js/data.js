@@ -86,6 +86,18 @@ window.OGP.data = {
       morning: ['08:30', '09:15', '10:00', '11:30'],
       afternoon: ['14:00', '15:15', '16:30', '17:45'],
       image: ''
+    },
+    {
+      id: 'salazar',
+      name: 'Dra. Lina Salazar',
+      role: 'Rehabilitadora oral',
+      specialtyId: 'rehabilitacion',
+      bio: 'Rehabilitadora oral con experiencia en prótesis, coronas e implantes. Explica cada etapa del tratamiento con claridad para que decidas con tranquilidad.',
+      availability: 'Lunes, miércoles y viernes, 8:30 a. m. – 6:00 p. m.',
+      days: [1, 3, 5],
+      morning: ['08:30', '09:15', '10:00', '11:30'],
+      afternoon: ['14:00', '15:15', '16:30', '17:45'],
+      image: ''
     }
   ],
 };
