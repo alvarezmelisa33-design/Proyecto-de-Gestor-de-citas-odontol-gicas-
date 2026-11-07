@@ -381,4 +381,56 @@
     showResult(field, message);
     return !message;
   }
+
+  function bindForm() {
+    Object.keys(FIELDS).forEach(function (key) {
+      var field = FIELDS[key];
+      var input = $(field.el);
+      var touched = false;
+
+      if (field.sanitize) {
+        input.addEventListener('input', function () {
+          var clean = field.sanitize(input.value);
+          if (clean !== input.value) { input.value = clean; }
+          if (key === 'reason') { $('reason-counter').textContent = input.value.length + ' / 250'; }
+          if (touched) { checkField(field); }
+        });
+      }
+      input.addEventListener(input.type === 'checkbox' ? 'change' : 'blur', function () {
+        touched = true;
+        if (key === 'fullName' || key === 'reason') { input.value = collapse(input.value); }
+        if (key === 'phone' && input.value.length === 10) {
+          input.value = input.value.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3');
+        }
+        checkField(field);
+      });
+      if (key === 'phone') {
+        input.addEventListener('focus', function () { input.value = input.value.replace(/\s/g, ''); });
+      }
+    });
+
+    /* Cambio de tipo de documento: ajusta largo máximo y vuelve a validar */
+    $('doc-type').addEventListener('change', function () {
+      var rule = docRule();
+      var num = $('doc-number');
+      num.maxLength = rule.max;
+      num.inputMode = rule.id === 'PA' ? 'text' : 'numeric';
+      num.value = FIELDS.docNumber.sanitize(num.value);
+      $('doc-help').textContent = rule.hint;
+      if (num.value) { checkField(FIELDS.docNumber); }
+    });
+
+    /* Sugerencias rápidas de motivo */
+    $('reason-chips').addEventListener('click', function (e) {
+      var chip = e.target.closest('.chip');
+      if (!chip || chip.disabled) { return; }
+      var reason = $('reason');
+      reason.value = chip.getAttribute('data-reason');
+      $('reason-counter').textContent = reason.value.length + ' / 250';
+      checkField(FIELDS.reason);
+      reason.focus();
+    });
+
+    $('appointment-form').addEventListener('submit', onSubmit);
+  }
 })();
