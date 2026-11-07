@@ -480,4 +480,17 @@
     $('confirmation').scrollIntoView({ behavior: 'smooth', block: 'start' });
     $('confirmation-title').focus();
   }
+
+  function newBooking() {
+    $('appointment-form').reset();
+    Object.keys(FIELDS).forEach(function (key) { showResult(FIELDS[key], ''); $(FIELDS[key].el).closest('.field').classList.remove('is-valid'); });
+    $('reason-counter').textContent = '0 / 250';
+    $('doc-type').dispatchEvent(new Event('change'));
+    $('submit-btn').classList.remove('is-loading');
+    $('confirmation').classList.remove('is-visible');
+    $('booking-grid').hidden = false;
+    resetSelection();
+    renderCalendar();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 })();
