@@ -208,4 +208,13 @@
     for (var i = 0; i < controls.length; i++) { controls[i].disabled = locked; }
     $('form-lock').setAttribute('aria-hidden', String(!locked));
   }
+
+  function resetSelection() {
+    state.date = null;
+    state.time = '';
+    renderSlots();
+    renderAssigned();
+    setFormLocked(true);
+    setStep(1);
+  }
 })();
