@@ -162,3 +162,10 @@ a { color: var(--lilac-dark); }
 .media-empty span { font-size: 0.8rem; font-weight: 600; color: var(--gray-text); }
 .media-square { aspect-ratio: 1 / 1; }
 .media-hero { aspect-ratio: 3 / 2; border-radius: var(--radius); box-shadow: var(--shadow-lg); }
+
+/* 6. TARJETAS Y LISTAS DE CONTENIDO ------------------------------------------ */
+.hero { padding: 64px 0; background: linear-gradient(180deg, var(--pastel) 0%, var(--white) 100%); }
+.hero-inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 48px; align-items: center; }
+.hero-lead { font-size: 1.1rem; color: var(--gray-text); max-width: 540px; }
+.hero .accent { color: var(--lilac); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
