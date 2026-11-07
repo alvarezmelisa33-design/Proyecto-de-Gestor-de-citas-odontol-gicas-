@@ -126,3 +126,15 @@ function todosIguales(texto) {
   }
   return true;
 }
+
+/* Lee un entero entre min y max; repite la pregunta hasta que sea válido */
+async function leerEntero(pregunta, min, max) {
+  while (true) {
+    const texto = await leer(pregunta);
+    const numero = Number(texto);
+    if (texto !== '' && Number.isInteger(numero) && numero >= min && numero <= max) {
+      return numero;
+    }
+    console.log('  ✗ Escribe un número entre ' + min + ' y ' + max + '.');
+  }
+}
