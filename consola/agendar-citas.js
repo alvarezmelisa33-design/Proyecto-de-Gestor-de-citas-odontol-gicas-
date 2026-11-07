@@ -107,3 +107,13 @@ function formatoFecha(fecha) {
 function fechaLarga(fecha) {
   return DIAS_SEMANA[fecha.getDay()] + ' ' + fecha.getDate() + ' de ' + MESES[fecha.getMonth()] + ' de ' + fecha.getFullYear();
 }
+
+/* Devuelve true si TODOS los caracteres del texto están en "permitidos" */
+function soloCaracteres(texto, permitidos) {
+  for (let i = 0; i < texto.length; i++) {
+    if (!permitidos.includes(texto.charAt(i))) {
+      return false;
+    }
+  }
+  return true;
+}
