@@ -42,4 +42,11 @@
       'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ' +
       'aria-hidden="true" focusable="false">' + (PATHS[name] || '') + '</svg>';
   }
+
+  /* ---------- Utilidades ---------- */
+  function esc(text) {
+    return String(text).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
 })();
