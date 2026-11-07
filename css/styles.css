@@ -331,3 +331,15 @@ a { color: var(--lilac-dark); }
 .dot-free { background: var(--pastel); border: 1px solid var(--pastel-line); }
 .dot-busy { background: var(--gray-bg); }
 .dot-sel { background: var(--lilac); }
+
+.slot-group-title { display: flex; gap: 8px; align-items: center; font-weight: 700; font-size: 0.9rem; margin: 14px 0 8px; }
+.slots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.slot {
+  padding: 10px 4px; border-radius: 10px; border: 2px solid var(--pastel-line); background: var(--white);
+  color: var(--navy); font-family: var(--font-body); font-weight: 700; font-size: 0.85rem; cursor: pointer;
+  white-space: nowrap; min-height: 44px;
+}
+.slot:hover:not([disabled]) { border-color: var(--lilac); background: var(--pastel); }
+.slot.is-selected { background: var(--lilac); border-color: var(--lilac); color: var(--white); }
+.slot[disabled] { background: var(--gray-bg); border-color: var(--gray-bg); color: #A0AEC0; text-decoration: line-through; cursor: not-allowed; }
+.slots-empty { color: var(--gray-text); font-size: 0.92rem; background: var(--pastel); padding: 14px; border-radius: var(--radius-sm); }
