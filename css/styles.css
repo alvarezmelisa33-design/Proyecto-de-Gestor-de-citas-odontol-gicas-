@@ -358,3 +358,6 @@ a { color: var(--lilac-dark); }
 .form-lock .lock-badge { width: 60px; height: 60px; border-radius: 50%; background: var(--pastel); color: var(--lilac-dark); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
 .form-lock p { color: var(--gray-text); max-width: 300px; }
 .panel.is-unlocked .form-lock { display: none; }
+
+.consent { display: flex; gap: 10px; align-items: flex-start; font-size: 0.88rem; }
+.consent input { width: 20px; height: 20px; accent-color: var(--lilac); margin-top: 3px; flex-shrink: 0; }
