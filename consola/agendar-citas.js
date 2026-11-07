@@ -148,3 +148,7 @@ async function leerSiNo(pregunta) {
     console.log('  ✗ Responde "s" o "n".');
   }
 }
+
+/* ---------------------------------------------------------------------
+   DISPONIBILIDAD (se calcula con la fecha y hora reales del computador)
+   --------------------------------------------------------------------- */
