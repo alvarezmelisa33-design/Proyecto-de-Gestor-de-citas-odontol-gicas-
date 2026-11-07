@@ -238,4 +238,12 @@
     resetSelection();
     renderCalendar();
   }
+
+  function onProfessionalChange(id) {
+    state.proId = id;
+    state.view = firstAvailableView();
+    renderProMini();
+    resetSelection();
+    renderCalendar();
+  }
 })();
