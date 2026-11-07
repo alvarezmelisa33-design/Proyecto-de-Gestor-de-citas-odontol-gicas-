@@ -32,3 +32,6 @@
   --container: 1120px;
   --gap: 24px;
 }
+
+/* 2. BASE Y ACCESIBILIDAD --------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
