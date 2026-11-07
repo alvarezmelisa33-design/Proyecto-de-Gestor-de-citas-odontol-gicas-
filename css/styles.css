@@ -283,3 +283,19 @@ a { color: var(--lilac-dark); }
 .field { margin-bottom: 18px; }
 .field > label, .field-label { display: flex; justify-content: space-between; gap: 8px; font-weight: 700; font-size: 0.93rem; margin-bottom: 6px; }
 .field-hint { font-weight: 500; color: var(--gray-text); font-size: 0.8rem; }
+
+.input, .select, .textarea {
+  width: 100%; font-family: var(--font-body); font-size: 1rem; color: var(--navy);
+  background: var(--white); border: 2px solid #CBD5E0; border-radius: var(--radius-sm);
+  padding: 12px 14px; transition: border-color 0.2s;
+}
+.input:focus, .select:focus, .textarea:focus { outline: none; border-color: var(--lilac); box-shadow: 0 0 0 3px rgba(128, 90, 213, 0.2); }
+.input:disabled, .select:disabled, .textarea:disabled { background: var(--gray-bg); cursor: not-allowed; }
+.textarea { resize: vertical; min-height: 96px; }
+.field.has-error .input, .field.has-error .select, .field.has-error .textarea { border-color: var(--error); background: var(--error-bg); }
+.field.is-valid .input, .field.is-valid .textarea { border-color: var(--lilac); }
+.field-error { display: none; align-items: center; gap: 6px; color: var(--error); font-size: 0.85rem; font-weight: 600; margin-top: 6px; }
+.field.has-error .field-error { display: flex; }
+.field-help { font-size: 0.8rem; color: var(--gray-text); margin-top: 4px; }
+.row-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 14px; }
+.counter { text-align: right; font-size: 0.8rem; color: var(--gray-text); margin-top: 4px; }
