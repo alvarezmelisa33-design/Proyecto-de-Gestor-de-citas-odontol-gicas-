@@ -58,3 +58,11 @@ function leer(pregunta) {
    --------------------------------------------------------------------- */
 const ESPECIALIDADES = ['Ortodoncia', 'Estética y Blanqueamiento', 'Rehabilitación Oral', 'Odontopediatría'];
 const PROFESIONALES = ['Dr. Alejandro Valencia', 'Dra. Paula Ibañez', 'Dra. Lina Salazar', 'Dra. Natalia Carrillo'];
+
+/* Días que atiende cada profesional (0 = domingo, 1 = lunes ... 6 = sábado) */
+const DIAS_ATENCION = [
+  [1, 2, 3, 4, 5],
+  [2, 4, 6],
+  [1, 3, 5],
+  [1, 2, 3, 4, 5, 6]
+];
