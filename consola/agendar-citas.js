@@ -340,3 +340,107 @@ async function pedirMotivo() {
     }
   }
 }
+
+/* ---------------------------------------------------------------------
+   AGENDAR UNA CITA (flujo completo)
+   --------------------------------------------------------------------- */
+async function agendarCita() {
+  console.log('\n===== AGENDAR CITA =====');
+
+  /* 1. Especialidad */
+  console.log('\nEspecialidades:');
+  for (let i = 0; i < ESPECIALIDADES.length; i++) {
+    console.log('  ' + (i + 1) + '. ' + ESPECIALIDADES[i] + '  (' + PROFESIONALES[i] + ')');
+  }
+  const indice = (await leerEntero('Elige la especialidad: ', 1, ESPECIALIDADES.length)) - 1;
+
+  mostrarSemana(indice);
+
+  /* 2. Mes y día */
+  const hoy = new Date();
+  const siguiente = new Date(hoy.getFullYear(), hoy.getMonth() + 1, 1);
+  console.log('Meses:  1. ' + MESES[hoy.getMonth()] + '   2. ' + MESES[siguiente.getMonth()]);
+  const eleccionMes = await leerEntero('Elige el mes: ', 1, 2);
+  const anio = eleccionMes === 1 ? hoy.getFullYear() : siguiente.getFullYear();
+  const mes = eleccionMes === 1 ? hoy.getMonth() : siguiente.getMonth();
+
+  mostrarCalendario(indice, anio, mes);
+
+  let fecha = null;
+  while (fecha === null) {
+    const dia = await leerEntero('Elige el día del mes (0 para cancelar): ', 0, 31);
+    if (dia === 0) {
+      console.log('Agendamiento cancelado.');
+      return;
+    }
+    const candidata = new Date(anio, mes, dia);
+    const inicioHoy = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+    if (candidata.getMonth() !== mes || candidata < inicioHoy || !diaDisponible(indice, candidata)) {
+      console.log('  ✗ Ese día no está disponible. Elige uno marcado con [dd].');
+    } else {
+      fecha = candidata;
+    }
+  }
+
+  /* 3. Horario: ciclo anidado turno x hora */
+  const horarios = horariosDelDia(indice, fecha);
+  const nombresTurno = ['Mañana', 'Tarde'];
+  console.log('\nHorarios para ' + fechaLarga(fecha) + ':');
+  for (let t = 0; t < 2; t++) {
+    let hayTurno = false;
+    for (let h = 0; h < horarios.length; h++) {
+      if (horarios[h].turno === t) {
+        if (!hayTurno) {
+          console.log('  ' + nombresTurno[t] + ':');
+          hayTurno = true;
+        }
+        const estado = horarios[h].libre ? 'libre' : 'no disponible';
+        console.log('    ' + (h + 1) + '. ' + horarios[h].hora + '  ' + estado);
+      }
+    }
+  }
+
+  let elegido = null;
+  while (elegido === null) {
+    const opcion = await leerEntero('Elige el horario por su número: ', 1, horarios.length);
+    if (horarios[opcion - 1].libre) {
+      elegido = horarios[opcion - 1].hora;
+    } else {
+      console.log('  ✗ Ese horario no está disponible.');
+    }
+  }
+
+  /* 4. Datos del paciente */
+  console.log('\n--- Tus datos (todos son obligatorios) ---');
+  const documento = await pedirDocumento();
+  const nombre = await pedirNombre();
+  const celular = await pedirCelular();
+  const motivo = await pedirMotivo();
+  const acepta = await leerSiNo('¿Autorizas el tratamiento de tus datos personales (Ley 1581 de 2012)?');
+  if (!acepta) {
+    console.log('Sin autorización no podemos registrar la cita. Agendamiento cancelado.');
+    return;
+  }
+
+  /* 5. Resumen y confirmación */
+  console.log('\n--- Resumen ---');
+  console.log('  Especialidad : ' + ESPECIALIDADES[indice] + ' · ' + PROFESIONALES[indice]);
+  console.log('  Fecha y hora : ' + fechaLarga(fecha) + ' · ' + elegido);
+  console.log('  Paciente     : ' + nombre + ' (' + documento.tipo + ' ' + documento.numero + ')');
+  console.log('  Celular      : ' + celular);
+  console.log('  Motivo       : ' + motivo);
+  if (!(await leerSiNo('¿Confirmas la cita?'))) {
+    console.log('Cita no confirmada.');
+    return;
+  }
+
+  const codigo = 'ORAL-' + hoy.getFullYear() + '-' + String(1000 + Math.floor(Math.random() * 9000));
+  citasAgendadas.push({ codigo, especialidad: ESPECIALIDADES[indice], profesional: PROFESIONALES[indice], fecha: fechaLarga(fecha), hora: elegido, nombre });
+
+  console.log('\n╔══════════════════════════════════════╗');
+  console.log('║        ¡TU CITA ESTÁ CONFIRMADA!     ║');
+  console.log('╚══════════════════════════════════════╝');
+  console.log('  Código: ' + codigo);
+  console.log('  ' + fechaLarga(fecha) + ' a las ' + elegido + ' con ' + PROFESIONALES[indice]);
+  console.log('  Preséntate 10 minutos antes. Para reagendar avisa con 4 horas de anticipación.');
+}
