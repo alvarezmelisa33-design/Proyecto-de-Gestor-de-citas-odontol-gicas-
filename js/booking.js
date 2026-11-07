@@ -289,4 +289,7 @@
      ====================================================================== */
   var LETTERS = 'A-Za-zÁÉÍÓÚÜÑáéíóúüñ';
   var WORD_RE = new RegExp('^[' + LETTERS + ']+(?:[\'’-][' + LETTERS + ']+)*$');
+
+  function collapse(v) { return v.replace(/\s+/g, ' ').trim(); }
+  function docRule() { return U.byId(D.documentTypes, $('doc-type').value) || D.documentTypes[0]; }
 })();
