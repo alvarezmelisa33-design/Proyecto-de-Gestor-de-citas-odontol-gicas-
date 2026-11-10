@@ -3,8 +3,8 @@
    Todo lo que se muestra (especialidades, equipo, testimonios, horarios)
    sale de aquí. No hay base de datos: son datos simulados (RNF-05).
 
-   Para poner una imagen real: escribe la ruta en el campo "image" de la
-   especialidad o del profesional (ej. image: 'img/ortodoncia.jpg').
+   Para poner una imagen real: escribe la ruta en el campo "image"
+   (ej. image: 'img/ortodoncia.jpg'). Todas viven en la carpeta img/.
    Mientras esté vacío se muestra el icono de montaña como marcador.
    ========================================================================== */
 window.OGP = window.OGP || {};
@@ -32,7 +32,7 @@ window.OGP.data = {
       short: 'Alineamos tus dientes con brackets y alineadores.',
       description: 'Corregimos la posición de los dientes y la mordida con brackets metálicos, estéticos o alineadores transparentes. Iniciamos con un estudio completo (fotos, radiografías y escáner) y un plan personalizado con controles periódicos.',
       treatments: ['Brackets metálicos y estéticos', 'Alineadores transparentes', 'Retenedores', 'Control y ajustes mensuales'],
-      image: ''
+      image: 'img/ortodoncia.jpg'
     },
     {
       id: 'estetica',
@@ -40,7 +40,7 @@ window.OGP.data = {
       short: 'Recupera el tono y la armonía de tu sonrisa.',
       description: 'Aclaramos el color de tus dientes de forma segura y diseñamos sonrisas armónicas. Incluye limpieza previa, valoración de sensibilidad y kit de mantenimiento para casa.',
       treatments: ['Blanqueamiento en consultorio', 'Diseño de sonrisa', 'Carillas y resinas estéticas', 'Limpieza profiláctica'],
-      image: ''
+      image: 'img/estetica.jpg'
     },
     {
       id: 'rehabilitacion',
@@ -48,7 +48,7 @@ window.OGP.data = {
       short: 'Devolvemos función y estética a tu boca.',
       description: 'Restauramos la capacidad de masticar y sonreír con coronas, puentes, prótesis e implantes, buscando resultados naturales y duraderos, con un plan por etapas claro y transparente.',
       treatments: ['Coronas y puentes', 'Prótesis removibles y fijas', 'Implantes dentales', 'Rehabilitación de la mordida'],
-      image: ''
+      image: 'img/rehabilitacion.jpg'
     },
     {
       id: 'odontopediatria',
@@ -56,7 +56,7 @@ window.OGP.data = {
       short: 'Atención amable para los más pequeños.',
       description: 'Cuidamos la salud oral de bebés, niños y adolescentes en un ambiente tranquilo y didáctico. Prevención, sellantes, fluorización y seguimiento del crecimiento, siempre con paciencia y cariño.',
       treatments: ['Primera visita del bebé', 'Sellantes y fluorización', 'Control del crecimiento dental', 'Manejo de la ansiedad dental'],
-      image: ''
+      image: 'img/odontopediatria.jpg'
     }
   ],
 
@@ -73,7 +73,7 @@ window.OGP.data = {
       days: [1, 2, 3, 4, 5],
       morning: ['08:30', '09:15', '10:00', '11:30'],
       afternoon: ['14:00', '15:15', '16:30', '17:45'],
-      image: ''
+      image: 'img/valencia.jpg'
     },
     {
       id: 'ibanez',
@@ -85,7 +85,7 @@ window.OGP.data = {
       days: [2, 4, 6],
       morning: ['08:30', '09:15', '10:00', '11:30'],
       afternoon: ['14:00', '15:15', '16:30', '17:45'],
-      image: ''
+      image: 'img/ibanez.jpg'
     },
     {
       id: 'salazar',
@@ -97,7 +97,7 @@ window.OGP.data = {
       days: [1, 3, 5],
       morning: ['08:30', '09:15', '10:00', '11:30'],
       afternoon: ['14:00', '15:15', '16:30', '17:45'],
-      image: ''
+      image: 'img/salazar.jpg'
     },
     {
       id: 'carrillo',
@@ -109,7 +109,7 @@ window.OGP.data = {
       days: [1, 2, 3, 4, 5, 6],
       morning: ['08:30', '09:15', '10:00', '11:30'],
       afternoon: ['14:00', '15:15', '16:30', '17:45'],
-      image: ''
+      image: 'img/carrillo.jpg'
     },
     {
       id: 'restrepo',
@@ -121,7 +121,7 @@ window.OGP.data = {
       days: [1, 3, 5],
       morning: ['08:30', '09:15', '10:00', '11:30'],
       afternoon: ['14:00', '15:15', '16:30', '17:45'],
-      image: ''
+      image: 'img/restrepo.jpg'
     },
     {
       id: 'mejia',
@@ -133,14 +133,14 @@ window.OGP.data = {
       days: [1, 3, 5],
       morning: ['08:30', '09:15', '10:00', '11:30'],
       afternoon: ['14:00', '15:15', '16:30', '17:45'],
-      image: ''
+      image: 'img/mejia.jpg'
     }
   ],
 
   /* Testimonios. "text" = frase corta (tarjetas del Inicio).
      "story" + treatment/duration/result = historia completa (página Testimonios).
-     beforeAfter: true muestra dos espacios de imagen (antes / después); en before, after y photo
-     se escribe la ruta de la foto real (con consentimiento escrito del paciente). */
+     beforeAfter: true muestra dos espacios (antes / después). Las fotos de img/ son
+     ilustraciones de ejemplo, no pacientes reales. */
   testimonials: [
     {
       name: 'María Fernanda López',
@@ -152,7 +152,7 @@ window.OGP.data = {
       treatment: 'Alineadores transparentes',
       duration: '14 meses',
       result: 'Apiñamiento corregido y mordida alineada',
-      beforeAfter: true, before: '', after: '', photo: ''
+      beforeAfter: true, before: 'img/lopez-antes.jpg', after: 'img/lopez-despues.jpg', photo: ''
     },
     {
       name: 'Carlos Andrés Ruiz',
@@ -164,7 +164,7 @@ window.OGP.data = {
       treatment: 'Primera valoración y sellantes',
       duration: '2 sesiones',
       result: 'Cero miedo en la consulta y molares protegidos',
-      beforeAfter: false, before: '', after: '', photo: ''
+      beforeAfter: false, before: '', after: '', photo: 'img/ruiz.jpg'
     },
     {
       name: 'Juliana Torres',
@@ -176,7 +176,7 @@ window.OGP.data = {
       treatment: 'Blanqueamiento en consultorio',
       duration: '1 sesión + kit de mantenimiento',
       result: 'Varios tonos más claros, sin sensibilidad',
-      beforeAfter: true, before: '', after: '', photo: ''
+      beforeAfter: true, before: 'img/torres-antes.jpg', after: 'img/torres-despues.jpg', photo: ''
     },
     {
       name: 'Jorge Alberto Castaño',
@@ -188,7 +188,7 @@ window.OGP.data = {
       treatment: 'Prótesis fija sobre implantes',
       duration: '5 meses',
       result: 'Masticación recuperada y sonrisa completa',
-      beforeAfter: true, before: '', after: '', photo: ''
+      beforeAfter: true, before: 'img/castano-antes.jpg', after: 'img/castano-despues.jpg', photo: ''
     },
     {
       name: 'Natalia Henao',
@@ -200,7 +200,7 @@ window.OGP.data = {
       treatment: 'Brackets estéticos',
       duration: '18 meses',
       result: 'Sonrisa simétrica y mordida estable',
-      beforeAfter: true, before: '', after: '', photo: ''
+      beforeAfter: true, before: 'img/henao-antes.jpg', after: 'img/henao-despues.jpg', photo: ''
     },
     {
       name: 'Sandra Milena Ospina',
@@ -212,7 +212,7 @@ window.OGP.data = {
       treatment: 'Control del bebé y guía de higiene',
       duration: '1 sesión',
       result: 'Rutina de cuidado clara desde los primeros meses',
-      beforeAfter: false, before: '', after: '', photo: ''
+      beforeAfter: false, before: '', after: '', photo: 'img/ospina.jpg'
     }
   ],
 

@@ -15,6 +15,7 @@ No tiene backend ni base de datos: los datos son de ejemplo y las citas no se gu
 
 ```
 index.html · especialidades.html · equipo.html · agendamiento.html · testimonios.html · contacto.html
+img/                    fotos del sitio (una sola carpeta; logo.png en el inicio)
 css/styles.css          hoja de estilos única
 js/data.js              contenido del sitio (fuente única de datos)
 js/ui.js                menú, pie de página, iconos y utilidades

@@ -36,7 +36,7 @@
 /* 2. BASE Y ACCESIBILIDAD --------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scrollbar-gutter: stable; }
 
 body {
   margin: 0;
@@ -151,17 +151,25 @@ a { color: var(--lilac-dark); }
 
 /* Contenedor de imagen: muestra la foto real o el icono de montaña */
 .media {
+  position: relative;
   background: var(--pastel); border: 2px dashed var(--pastel-line); border-radius: var(--radius-sm);
   overflow: hidden; aspect-ratio: 16 / 10; color: var(--lilac);
 }
-.media img { width: 100%; height: 100%; object-fit: cover; }
+/* La foto va fuera del flujo: si su alto depende de la caja y la caja del alto
+   de la foto, el navegador recalcula el layout sin parar. */
+.media img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
+.media:has(img) { border: none; background: var(--white); }
+.media-hero img { object-fit: contain; }
 .media-empty {
-  width: 100%; height: 100%; display: flex; flex-direction: column;
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 8px; padding: 12px; text-align: center;
 }
 .media-empty span { font-size: 0.8rem; font-weight: 600; color: var(--gray-text); }
 .media-square { aspect-ratio: 1 / 1; }
-.media-hero { aspect-ratio: 3 / 2; border-radius: var(--radius); box-shadow: var(--shadow-lg); }
+.media-hero { aspect-ratio: 1 / 1; border-radius: var(--radius); box-shadow: var(--shadow-lg); }
 
 /* 6. TARJETAS Y LISTAS DE CONTENIDO ------------------------------------------ */
 .hero { padding: 64px 0; background: linear-gradient(180deg, var(--pastel) 0%, var(--white) 100%); }
@@ -208,7 +216,8 @@ a { color: var(--lilac-dark); }
 .team-group { margin-bottom: 44px; }
 .team-group > h2 { display: flex; align-items: center; gap: 10px; }
 .pro-card { padding: 0; overflow: hidden; }
-.pro-card .media { border-radius: 0; border: 0; border-bottom: 2px dashed var(--pastel-line); aspect-ratio: auto; height: 150px; }
+.pro-card .media { border-radius: 0; border: 0; aspect-ratio: auto; height: 150px; }
+.pro-card .media:not(:has(img)) { border-bottom: 2px dashed var(--pastel-line); }
 .pro-card .pro-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .pro-card h3 { margin-bottom: 0; }
 .pro-card .tag { align-self: flex-start; margin-bottom: 4px; }

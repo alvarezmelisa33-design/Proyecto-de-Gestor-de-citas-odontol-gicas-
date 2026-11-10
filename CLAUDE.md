@@ -25,13 +25,16 @@ Los IDs de historias NO coinciden entre ambos documentos — pendiente definir c
   se reciba. Todos los colores están como variables en `:root` de `css/styles.css` (sección 1), así que
   el cambio se hace en un solo lugar.
 - **Tipografía:** títulos Albert Sans 700, cuerpo Plus Jakarta Sans (400–700).
-- **Imágenes:** marcador con icono de montaña. Para poner una real: rellenar `image` en `js/data.js`
-  (especialidades/profesionales) o `data-src` en los `data-media` de los HTML.
+- **Imágenes:** una sola carpeta `img/` en la raíz (ruta relativa, junto a `css/` y `js/`). Nombres en
+  minúscula y sin espacios, con el `id` del dato: `img/logo.png`, `img/ortodoncia.jpg`, `img/valencia.jpg`,
+  `img/ubicacion.jpg`. El sitio ya trae ilustraciones de ejemplo. Mientras `image` o `data-src` esté vacío
+  se muestra el marcador de montaña. Fotos reales de pacientes solo con consentimiento escrito.
 
 ## Estructura
 
 ```
 index.html · especialidades.html · equipo.html · agendamiento.html · testimonios.html · contacto.html
+img/                  fotos del sitio, en una sola carpeta (logo.png ya está en el inicio)
 css/styles.css        única hoja de estilos (índice numerado al inicio)
 js/data.js            ÚNICA fuente de datos (clínica, especialidades, equipo, testimonios, festivos, reglas de documento)
 js/ui.js              menú único + pie + iconos + utilidades (se carga en todas las páginas)
